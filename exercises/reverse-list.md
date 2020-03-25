@@ -1,6 +1,6 @@
 # Inverta a Lista
 
--   assunto: Listas encadeadas
+-   assunto: Lista encadeada
 -   categoria: Implementar funcionalidade
 -   dificuldade: facil
 
@@ -69,7 +69,7 @@ if __name__ == '__main__':
     print(linked_list)
 ```
 
-## Examples
+## Exemplos
 
 ```
 # 1

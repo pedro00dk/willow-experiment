@@ -1,6 +1,6 @@
 # Primeiro Ancestral Comum
 
--   assunto: Aŕvores Binárias
+-   assunto: Árvore binária
 -   categoria: Implementar funcionalidade
 -   dificuldade: facil
 
@@ -90,7 +90,7 @@ if __name__ == '__main__':
     print(lowest_common_ancestor(bst, va, vb))
 ```
 
-## Examples
+## Exemplos
 
 ```
 # 1
