@@ -17,6 +17,10 @@ Você deve completar a função `reverse(head)` que recebe um argumento - a cabe
 Não é necessario implementar qualquer lógica para ler entrada ou imprimir a saida.
 As entradas e saidas do programa são procesadas automáticamente.
 
+## Entrada
+
+A entrada é uma lista de números que representa a lista encadeada. O primeiro número estará no ínicio da lista.
+
 ## Código
 
 ```python
