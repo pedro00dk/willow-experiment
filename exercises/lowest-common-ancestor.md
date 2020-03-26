@@ -27,7 +27,7 @@ Se números são repetidos, apenas o primeiro é adicionado.
 6 3 5 1 5 4 9 7 8
 1 4
 
-# Produced Tree
+# Árvore produzida
 #        6
 #     /     \
 #    3       9
