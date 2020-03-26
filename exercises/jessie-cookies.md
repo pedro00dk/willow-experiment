@@ -2,7 +2,7 @@
 
 -   assunto: Heap
 -   categoria: Implementar funcionalidade
--   dificuldade: médio
+-   dificuldade: fácil (longo)
 
 ## Problema
 
@@ -15,7 +15,7 @@ Ele repete esse procedimento até que todos os biscoitos restantes tenham doçur
 
 ## Tarefa
 
-Você deve completar a função `combinations(cookies, k)` que recebe uma lista com a doçura dos biscoitos e a doçura esperada.
+Você deve completar a função `combinations(cookies, k)` que recebe uma lista com a doçura dos biscoitos e a doçura mínima `K`.
 Calcule a quantidade de misturas de biscoitos requeridos para que todos os biscoitos tenham a doçura desejada por Jessie.
 Se a doçura não pode ser atingida, retorne `-1`.
 
@@ -31,21 +31,29 @@ A segunda linha contem o valor `K`, a doçura requerida.
 def combinations(cookies, k):
     # possivel solução
     def heapify(i):
-        left, right = i * 2 + 1, i * 2 + 2
-        smaller = left if len(cookies) and cookies[i] < cookies[left] else
-            right if right < len(cookies) and cookies[i] < cookies[right] else
-            i
+        l, r = i * 2 + 1, i * 2 + 2
+        smaller = i
+        smaller = l if l < len(cookies) and cookies[l] < cookies[smaller] else smaller
+        smaller = r if r < len(cookies) and cookies[r] < cookies[smaller] else smaller
         if smaller != i:
-            cookies[i], cookies[smaller] = coolies[smaller], cookies[i]
+            cookies[i], cookies[smaller] = cookies[smaller], cookies[i]
             heapify(smaller)
 
-   # TODO 
+    for i in range(len(cookies) // 2 - 1, -1, -1):
+        heapify(i)
 
-    for i in range(len(cookies) // 2, 0): heapify(i)
+    merges = 0
+    while len(cookies) >= 2 and cookies[0] < k:
+        cookie_a = cookies[0]
+        cookies[0] = cookies.pop()
+        heapify(0)
+        cookie_b = cookies[0]
+        new_cookie = cookie_a + cookie_b * 2
+        cookies[0] = new_cookie
+        heapify(0)
+        merges += 1
 
-    count = len(cookie)
-    while count > 1 and cookies[0] < k:
-
+    return merges if cookies[0] >= k else -1
     #
     pass
 
@@ -61,24 +69,25 @@ if __name__ == '__main__':
 ```
 # 1
 ## Input
-0 2 3 4 5 8 9
+7 1 9 8 5 9
+50
 
-## Expected Output
-9 8 5 4 3 2 0
-
+## Output
+5
 
 # 2
-## Input
-10
+## Input 
+7 2 5 1 3 2 6 7
+70
 
 ## Output
-10
-
+7
 
 # 3
-## Input <empty>
-
+## Input 
+2 2 5 3 1 1
+45
 
 ## Output
-None
+-1
 ```
