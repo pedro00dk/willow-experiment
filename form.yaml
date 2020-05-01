@@ -44,7 +44,7 @@ sessions:
 
           - text: |
               ##### Preencha abaixo seu nome e email.
-          
+
           - answer:
               id: name
               required: false
@@ -58,102 +58,212 @@ sessions:
               type:
                 short:
                   placeholder: seu email
+
+          - answer:
+              id: university
+              required: false
+              type:
+                short:
+                  placeholder: nome de sua faculdade ou universidade
+
+          - answer:
+              id: course
+              required: false
+              type:
+                short:
+                  placeholder: nome do seu curso
+
+          - answer:
+              id: period
+              required: false
+              type:
+                short:
+                  placeholder: periodo que está cursando
   #
   #
   - questions:
-    - content:
-      - text: |
-          ### Willow
-          
-          As proximas sessões contém o primeiro conjunto de questões.
-          Estas questões devem ser resolvidas usando a ferramenta Willow.
+      - content:
+          - text: |
+              ### Willow
 
-          Antes de responder as questões, você deve abrir a ferramenta e seguir as etapas abaixo.
-          Estas etapas proverão uma explicação básica de como a ferramenta Willow funciona.
+              As proximas sessões contem problemas que devem ser resolvidos usando a ferramenta Willow.
 
-          Primeiro clique link abaixo para acessar o site do Willow.
-          http://willowbeta.xyz
+              Antes de responder as questões, você deve abrir a ferramenta e seguir as etapas abaixo.
+              Estas etapas proverão uma explicação básica de como a ferramenta Willow funciona.
 
-          Ao acessar o site, você deve clicar no botão no canto superior direito para se logar com sua conta google.
-          O login permitirá que você possa executar programas com mais passos.
+              Primeiro clique link abaixo para acessar o site do Willow.
+              http://willowbeta.xyz
 
-          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step0-signin.png?raw=true)
+              Ao acessar o site, você deve clicar no botão no canto superior direito para se logar com sua conta google.
+              O login permitirá que você possa executar programas com mais passos.
 
-          #### Passo 1
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step0-signin.png?raw=true)
 
-          A forma mais rápida de entender como Willow funciona é usando.
-          Selecione a linguagem Python na barra de ferramentas, e então cole o código de uma lista encadeada abaixo no editor de código (Editor).
-          ```
-          class Node:
-              def __init__(self, v):
-                  self.next = None
-                  self.v = v
-                  self.prev = None
-              
-          class LinkedList:
-              def __init__(self):
-                  self.head = self.tail = None
-                  self.size = 0
-              
-              def append(self, v):
-                  new = Node(v)
-                  if self.size == 0:
-                      self.head = self.tail = new
-                  else:
-                      self.tail.next = new
-                      new.prev = self.tail
-                      self.tail = new
-                  self.size += 1
+              #### Passo 1
+
+              A forma mais rápida de entender como Willow funciona é usando.
+              Selecione a linguagem Python na barra de ferramentas, e então cole o código de uma lista encadeada abaixo no editor de código (Editor).
+              ```
+              class Node:
+                  def __init__(self, v):
+                      self.next = None
+                      self.v = v
+                      self.prev = None
                   
-          ll = LinkedList()
-          ll.append(input())
-          ll.append(input())
-          ll.append(input())
-          ll.append(input())
-          ll.append(input())
-          ```
+              class LinkedList:
+                  def __init__(self):
+                      self.head = self.tail = None
+                      self.size = 0
+                  
+                  def append(self, v):
+                      new = Node(v)
+                      if self.size == 0:
+                          self.head = self.tail = new
+                      else:
+                          self.tail.next = new
+                          new.prev = self.tail
+                          self.tail = new
+                      self.size += 1
+                      
+              ll = LinkedList()
+              ll.append(input())
+              ll.append(input())
+              ll.append(input())
+              ll.append(input())
+              ll.append(input())
+              ```
 
-          Cole também a entrada no editor de entrada (Input), que serão os valores que a lista usará para criar os nós.
-          ```
-          0
-          1
-          2
-          3
-          ```
+              Cole também a entrada no editor de entrada (Input), que serão os valores que a lista usará para criar os nós.
+              ```
+              0
+              1
+              2
+              3
+              ```
 
-          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step1-screen.png?raw=true)
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step1-screen.png?raw=true)
 
-          #### Passo 2
+              #### Passo 2
 
-          Para executar o código, basta clicar no botão play na barra de ferramentas.
+              Para executar o código, basta clicar no botão play na barra de ferramentas.
 
-          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-play.png?raw=true)
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-play.png?raw=true)
 
-          Aguarde alguns segundos até que a visualização seja gerada.
+              Aguarde alguns segundos até que a visualização seja gerada.
 
-          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-screen.png?raw=true)
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-screen.png?raw=true)
 
-          #### Passo 3
+              #### Passo 3
 
-          Use as setas para direita e esquerda para navegar pelo código, navegue até o fim do programa.
-          Você também pode clicar nos escopos do programa para pular para este ponto do programa.
-          Clique duplo pula para o fim do escopo ao invés do início.
+              Use as setas para direita e esquerda para navegar pelo código, navegue até o fim do programa.
+              Você também pode clicar nos escopos do programa para pular para este ponto do programa.
+              Clique duplo pula para o fim do escopo ao invés do início.
 
-          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step3-scopes.gif?raw=true)
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step3-scopes.gif?raw=true)
 
-          #### Passo 4
+              #### Passo 4
 
-          Tente agora arrastar os objetos na heap.
+              Tente agora arrastar os objetos na heap.
 
-          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step4-move.gif?raw=true)
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step4-move.gif?raw=true)
 
-          Você pode também habilitar disposição automática, basta clicar duas vezes em qualquer objeto de uma estrutura de dados.
-          Se você mover este objeto a disposição automática e desativada.
+              Você pode também habilitar disposição automática, basta clicar duas vezes em qualquer objeto de uma estrutura de dados.
+              Se você mover este objeto a disposição automática e desativada.
 
-          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step4-auto.gif?raw=true)
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step4-auto.gif?raw=true)
 
-      - text: |
-          As duas proximas sessões contem um problema cada, que devem ser resolvidos com a ajuda de Willow.
-          Um código base será fornecido na descrição do problema, e você deverá completa-lo a fim de resolver o problema.
-          Após resolver, você deve **copiar todo o código** no campo de respostas.
-          As sessões de problemas possuem cronómetro, tente responder dentro do tempo limite, mas mesmo se você ultrapassar o tempo máximo, a resposta ainda pode ser submetida.
+          - text: |
+              As duas proximas sessões contem um problema cada, que devem ser resolvidos com a ajuda de Willow.
+              Um código base será fornecido na descrição do problema, e você deverá completa-lo a fim de resolver o problema.
+              Após resolver, você deve **copiar todo o código** no campo de respostas.
+              As sessões de problemas possuem cronômetro, tente responder dentro do tempo limite, mas mesmo se você ultrapassar o tempo máximo, a resposta ainda pode ser submetida.
+  #
+  #
+  - timeLimit: 10
+    questions:
+      - content:
+          - text: |
+              # Aqui vem o problema 1 (a escolher)
+          - answer:
+              id: q1
+              required: false
+              type:
+                long:
+                  placeholder: cole todo o código aqui
+  #
+  #
+  - timeLimit: 15
+    questions:
+      - content:
+          - text: |
+              # Aqui vem o problema 2 (a escolher)
+          - answer:
+              id: q2
+              required: false
+              type:
+                long:
+                  placeholder: cole todo o código aqui
+  #
+  #
+  - questions:
+      - content:
+          - text: |
+              ### Sem ferramentas
+
+              As proximas sessões contem problemas que devem ser resolvidos sem a ferramenta Willow.
+              Você pode usar o ambiente de programação que achar mais confortavel.
+              Você pode também, se desejar, usar sites que executam código online, como o https://repl.it/ .
+
+          - text: |
+              As duas proximas sessões contem um problema cada, que devem ser resolvidos sem a ajuda de ferramentas.
+              Um código base será fornecido na descrição do problema, e você deverá completa-lo a fim de resolver o problema.
+              Após resolver, você deve **copiar todo o código** no campo de respostas.
+              As sessões de problemas possuem cronômetro, tente responder dentro do tempo limite, mas mesmo se você ultrapassar o tempo máximo, a resposta ainda pode ser submetida.
+  #
+  #
+  - timeLimit: 10
+    questions:
+      - content:
+          - text: |
+              # Aqui vem o problema 3 (a escolher)
+          - answer:
+              id: q3
+              required: false
+              type:
+                long:
+                  placeholder: cole todo o código aqui
+  #
+  #
+  - timeLimit: 15
+    questions:
+      - content:
+          - text: |
+              # Aqui vem o problema 4 (a escolher)
+          - answer:
+              id: q4
+              required: false
+              type:
+                long:
+                  placeholder: cole todo o código aqui
+  #
+  #
+  - questions:
+      - content:
+          - text: |
+              ### Para finalizar, responda o que achou da ferramenta Willow
+
+      - content:
+          - text: |
+              #### Você concorda que a ferramenta Willow pode ajudar a entender o comportamento do código de um programa?
+          - answer:
+              id: r1
+              required: false
+              type:
+                likert:
+                  first: Discordo totalmente
+                  last: Concordo totalmente
+                  size: 5
+      
+      - content:
+        - text: |
+            #### Por mais questões, não pensei nelas ainda......
