@@ -1,0 +1,6 @@
+{
+    "cSpell.enabled": false,
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/pedro00dk/json-form/master/schema/schema.json": "/form.yaml"
+    }
+}

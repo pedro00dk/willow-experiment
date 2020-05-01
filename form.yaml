@@ -1,0 +1,59 @@
+submission:
+  url: // TODO
+  uniqueAnswer: email
+sessionOrder:
+  - 0
+sessions:
+  #
+  #
+  - questions:
+      - content:
+          - text: |
+              ## Uma análise quantitativa do impacto de Willow na assistência à resolução de problemas de Algoritmos e Estruturas de Dados por alunos de cursos de Computação.
+
+              #### Pesquisadores
+              - Pedro Henrique Sousa de Moraes -- phsm@cin.ufpe.br
+              - Leopoldo Motta Teixeira -- lmt@cin.ufpe.br
+
+              #### Participantes
+              Este experimento possui as seguintes restrições para participantes:
+              - Estar cursando a disciplina de Algoritmos e Estruturas de Dados ou equivalente.
+
+              #### Objetivo do Estudo
+              Analisar o desempenho dos participantes na resolução de problemas de Algoritmos e Estruturas de Dados em duas situações, são essas:
+              - Auxiliado pela ferramenta Willow
+              - Sem o auxílio de ferramentas.
+              Com o propósito de comparar as situações. Com respeito ao tempo de resolução dos problemas e qualidade das respostas.
+
+              Caso necessite de maiores esclarecimentos sobre algum item mencionado, ou precise de informações que não foram incluídas, entre em contato com os pesquisadores através de seus endereços de e-mail.
+
+              #### Privacidade
+              As informações obtidas a partir de sua participação neste estudo serão mantidas estritamente confidenciais.
+              Qualquer material será referenciado somente por um identificador.
+              Meramente para registro do trabalho, você deverá fornecer seu nome.
+              No entanto, todos os resultados apresentados em publicações científicas futuras serão anônimos, seu nome não fará parte dos dados.
+
+              ### Procedimentos
+              Esse formulário conta com quatro problemas de algoritmos e estruturas de dados.
+              Dois destes problemas deverão ser resolvidos usando a ferramenta Willow e os dois restantes sem a ferramenta.
+              Antes de cada par de problemas haverá uma sessão que indica se a ferramnta willow ou se nenhuma ferramenta deve ser usada.
+
+              #### Tempo
+              Esse formulário tem um tempo estimado de 45 minutos para ser resolvido.
+
+          - text: |
+              ##### Preencha abaixo seu nome e email.
+          
+          - answer:
+              id: name
+              required: false
+              type:
+                short:
+                  placeholder: seu nome
+
+          - answer:
+              id: email
+              required: false
+              type:
+                short:
+                  placeholder: seu email
