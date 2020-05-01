@@ -3,13 +3,14 @@ submission:
   uniqueAnswer: email
 sessionOrder:
   - 0
+    1
 sessions:
   #
   #
   - questions:
       - content:
           - text: |
-              ## Uma análise quantitativa do impacto de Willow na assistência à resolução de problemas de Algoritmos e Estruturas de Dados por alunos de cursos de Computação.
+              ### Uma análise quantitativa do impacto de Willow na assistência à resolução de problemas de Algoritmos e Estruturas de Dados por alunos de cursos de Computação.
 
               #### Pesquisadores
               - Pedro Henrique Sousa de Moraes -- phsm@cin.ufpe.br
@@ -39,7 +40,7 @@ sessions:
               Antes de cada par de problemas haverá uma sessão que indica se a ferramnta willow ou se nenhuma ferramenta deve ser usada.
 
               #### Tempo
-              Esse formulário tem um tempo estimado de 45 minutos para ser resolvido.
+              Esse formulário tem um tempo estimado de 45 minutos para ser concluido.
 
           - text: |
               ##### Preencha abaixo seu nome e email.
@@ -57,3 +58,76 @@ sessions:
               type:
                 short:
                   placeholder: seu email
+  #
+  #
+  - questions:
+    - content:
+      - text: |
+          ### Willow
+          
+          As proximas sessões contém o primeiro conjunto de questões.
+          Estas questões devem ser resolvidas usando a ferramenta Willow.
+
+          Antes de responder as questões, você deve abrir a ferramenta e seguir as etapas abaixo.
+          Estas etapas proverão uma explicação básica de como a ferramenta Willow funciona.
+
+          Primeiro clique link abaixo para acessar o site do Willow.
+          http://willowbeta.xyz
+
+          Ao acessar o site, você deve clicar no botão no canto superior direito para se logar com sua conta google.
+          O login permitirá que você possa executar programas com mais passos.
+
+          #### Passo 1
+
+          A forma mais rápida de entender como Willow funciona é usando.
+          Selecione a linguagem Python na barra de ferramentas, e então cole o código de uma lista encadeada abaixo no editor de código (Editor).
+          ```
+          class Node:
+              def __init__(self, v):
+                  self.next = None
+                  self.v = v
+                  self.prev = None
+              
+          class LinkedList:
+              def __init__(self):
+                  self.head = self.tail = None
+                  self.size = 0
+              
+              def append(self, v):
+                  new = Node(v)
+                  if self.size == 0:
+                      self.head = self.tail = new
+                  else:
+                      self.tail.next = new
+                      new.prev = self.tail
+                      self.tail = new
+                  self.size += 1
+                  
+          ll = LinkedList()
+          ll.append(input())
+          ll.append(input())
+          ll.append(input())
+          ll.append(input())
+          ll.append(input())
+          ```
+
+          Cole também a entrada no editor de entrada (Input), que serão os valores que a lista usará para criar os nós.
+          ```
+          0
+          1
+          2
+          3
+          ```
+
+          #### Passo 2
+
+          Para executar o código, basta clicar no botão play na barra de ferramentas.
+          Aguarde alguns segundos até que a visualização seja gerada.
+
+          #### Passo 3
+
+
+
+
+
+
