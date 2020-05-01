@@ -1,9 +1,26 @@
 submission:
-  url: // TODO
+  url: https://us-central1-json-form-63252.cloudfunctions.net/acceptSubmission
   uniqueAnswer: email
 sessionOrder:
-  - 0
-    1
+  dynamic:
+    url: https://us-central1-json-form-63252.cloudfunctions.net/getSessionOrder
+    orders:
+      - - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+      - - 0
+        - 4
+        - 2
+        - 3
+        - 1
+        - 5
+        - 6
+        - 7
 sessions:
   #
   #
