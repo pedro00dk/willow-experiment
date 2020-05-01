@@ -77,6 +77,8 @@ sessions:
           Ao acessar o site, você deve clicar no botão no canto superior direito para se logar com sua conta google.
           O login permitirá que você possa executar programas com mais passos.
 
+          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step0-signin.png?raw=true)
+
           #### Passo 1
 
           A forma mais rápida de entender como Willow funciona é usando.
@@ -119,15 +121,39 @@ sessions:
           3
           ```
 
+          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step1-screen.png?raw=true)
+
           #### Passo 2
 
           Para executar o código, basta clicar no botão play na barra de ferramentas.
+
+          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-play.png?raw=true)
+
           Aguarde alguns segundos até que a visualização seja gerada.
+
+          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-screen.png?raw=true)
 
           #### Passo 3
 
+          Use as setas para direita e esquerda para navegar pelo código, navegue até o fim do programa.
+          Você também pode clicar nos escopos do programa para pular para este ponto do programa.
+          Clique duplo pula para o fim do escopo ao invés do início.
 
+          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step3-scopes.gif?raw=true)
 
+          #### Passo 4
 
+          Tente agora arrastar os objetos na heap.
 
+          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step4-move.gif?raw=true)
 
+          Você pode também habilitar disposição automática, basta clicar duas vezes em qualquer objeto de uma estrutura de dados.
+          Se você mover este objeto a disposição automática e desativada.
+
+          ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step4-auto.gif?raw=true)
+
+      - text: |
+          As duas proximas sessões contem um problema cada, que devem ser resolvidos com a ajuda de Willow.
+          Um código base será fornecido na descrição do problema, e você deverá completa-lo a fim de resolver o problema.
+          Após resolver, você deve **copiar todo o código** no campo de respostas.
+          As sessões de problemas possuem cronómetro, tente responder dentro do tempo limite, mas mesmo se você ultrapassar o tempo máximo, a resposta ainda pode ser submetida.
