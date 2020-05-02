@@ -1,30 +1,30 @@
 submission:
   url: https://us-central1-json-form-63252.cloudfunctions.net/acceptSubmission
-  uniqueAnswer: email
-sessionOrder:
-  dynamic:
-    url: https://us-central1-json-form-63252.cloudfunctions.net/getSessionOrder
-    orders:
-      - - 0
-        - 1
-        - 2
-        - 3
-        - 4
-        - 5
-        - 6
-        - 7
-      - - 0
-        - 4
-        - 2
-        - 3
-        - 1
-        - 5
-        - 6
-        - 7
+  unique: email
+order:
+  orders:
+    - - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+    - - 0
+      - 4
+      - 2
+      - 3
+      - 1
+      - 5
+      - 6
+      - 7
+  url: https://us-central1-json-form-63252.cloudfunctions.net/getOrder
 sessions:
   #
   #
-  - questions:
+  - timer: 0
+    questions:
       - content:
           - text: |
               ### Uma análise quantitativa do impacto de Willow na assistência à resolução de problemas de Algoritmos e Estruturas de Dados por alunos de cursos de Computação.
@@ -98,7 +98,8 @@ sessions:
                   placeholder: periodo que está cursando
   #
   #
-  - questions:
+  - timer: 0
+    questions:
       - content:
           - text: |
               ### Willow
@@ -196,7 +197,7 @@ sessions:
               As sessões de problemas possuem cronômetro, tente responder dentro do tempo limite, mas mesmo se você ultrapassar o tempo máximo, a resposta ainda pode ser submetida.
   #
   #
-  - timeLimit: 10
+  - timer: 10
     questions:
       - content:
           - text: |
@@ -209,7 +210,7 @@ sessions:
                   placeholder: cole todo o código aqui
   #
   #
-  - timeLimit: 15
+  - timer: 15
     questions:
       - content:
           - text: |
@@ -222,7 +223,8 @@ sessions:
                   placeholder: cole todo o código aqui
   #
   #
-  - questions:
+  - timer: 0
+    questions:
       - content:
           - text: |
               ### Sem ferramentas
@@ -238,7 +240,7 @@ sessions:
               As sessões de problemas possuem cronômetro, tente responder dentro do tempo limite, mas mesmo se você ultrapassar o tempo máximo, a resposta ainda pode ser submetida.
   #
   #
-  - timeLimit: 10
+  - timer: 10
     questions:
       - content:
           - text: |
@@ -251,7 +253,7 @@ sessions:
                   placeholder: cole todo o código aqui
   #
   #
-  - timeLimit: 15
+  - timer: 15
     questions:
       - content:
           - text: |
@@ -264,7 +266,8 @@ sessions:
                   placeholder: cole todo o código aqui
   #
   #
-  - questions:
+  - timer: 0
+    questions:
       - content:
           - text: |
               ### Para finalizar, responda o que achou da ferramenta Willow
