@@ -27,7 +27,7 @@ sessions:
     questions:
       - content:
           - text: |
-              ### Uma análise quantitativa do impacto de Willow na assistência à resolução de problemas de Algoritmos e Estruturas de Dados por alunos de cursos de Computação.
+              ### Uma análise do impacto de Willow na assistência à resolução de problemas de Algoritmos e Estruturas de Dados.
 
               #### Pesquisadores
               - Pedro Henrique Sousa de Moraes -- phsm@cin.ufpe.br
@@ -40,62 +40,64 @@ sessions:
               #### Objetivo do Estudo
               Analisar o desempenho dos participantes na resolução de problemas de Algoritmos e Estruturas de Dados em duas situações, são essas:
               - Auxiliado pela ferramenta Willow
-              - Sem o auxílio de ferramentas.
-              Com o propósito de comparar as situações. Com respeito ao tempo de resolução dos problemas e qualidade das respostas.
+              - Sem o auxílio de ferramentas
+              
+              Com o propósito de comparar as situações.
+              Com respeito ao tempo de resolução dos problemas e qualidade das respostas.
 
               Caso necessite de maiores esclarecimentos sobre algum item mencionado, ou precise de informações que não foram incluídas, entre em contato com os pesquisadores através de seus endereços de e-mail.
 
               #### Privacidade
               As informações obtidas a partir de sua participação neste estudo serão mantidas estritamente confidenciais.
               Qualquer material será referenciado somente por um identificador.
-              Meramente para registro do trabalho, você deverá fornecer seu nome.
-              No entanto, todos os resultados apresentados em publicações científicas futuras serão anônimos, seu nome não fará parte dos dados.
+              Meramente para registro do trabalho, você deverá fornecer seu nome, email e informaçẽos demográficas.
+              No entanto, todos os resultados apresentados em publicações científicas futuras serão anonimizados.
 
               ### Procedimentos
               Esse formulário conta com quatro problemas de algoritmos e estruturas de dados.
               Dois destes problemas deverão ser resolvidos usando a ferramenta Willow e os dois restantes sem a ferramenta.
-              Antes de cada par de problemas haverá uma sessão que indica se a ferramnta willow ou se nenhuma ferramenta deve ser usada.
+              Antes de cada par de problemas haverá uma sessão que indica se a ferramenta willow deverá ser usada, acompanhado de um treinamento básico da ferramenta.
 
               #### Tempo
-              Esse formulário tem um tempo estimado de 45 minutos para ser concluido.
+              Os problemas a serem resolvidos neste questionário tem no total, um tempo esperado de 40 minutos para serem resolvidos.
 
           - text: |
-              ##### Preencha abaixo seu nome e email.
+              ##### Preencha os dados requeridos abaixo.
 
           - answer:
               id: name
-              required: false
+              required: true
               type:
                 short:
-                  placeholder: seu nome
+                  placeholder: Seu nome
 
           - answer:
               id: email
-              required: false
+              required: true
               type:
                 short:
-                  placeholder: seu email
+                  placeholder: Seu endereço de email
 
           - answer:
               id: university
-              required: false
+              required: true
               type:
                 short:
-                  placeholder: nome de sua faculdade ou universidade
+                  placeholder: Nome de sua institição de ensino
 
           - answer:
               id: course
-              required: false
+              required: true
               type:
                 short:
-                  placeholder: nome do seu curso
+                  placeholder: Nome do seu curso
 
           - answer:
               id: period
-              required: false
+              required: true
               type:
                 short:
-                  placeholder: periodo que está cursando
+                  placeholder: Periodo que está cursando
   #
   #
   - timer: 0
@@ -104,23 +106,24 @@ sessions:
           - text: |
               ### Willow
 
-              As proximas sessões contem problemas que devem ser resolvidos usando a ferramenta Willow.
+              As duas próximas sessões contêm problemas que devem ser resolvidos usando a ferramenta Willow.
 
-              Antes de responder as questões, você deve abrir a ferramenta e seguir as etapas abaixo.
-              Estas etapas proverão uma explicação básica de como a ferramenta Willow funciona.
+              Antes de responder as questões, você deve abrir a ferramenta e seguir os passos abaixo.
+              Os passos proverão um treinamento básico de como usar Willow.
 
               Primeiro clique link abaixo para acessar o site do Willow.
+              
               http://willowbeta.xyz
 
-              Ao acessar o site, você deve clicar no botão no canto superior direito para se logar com sua conta google.
-              O login permitirá que você possa executar programas com mais passos.
+              Ao acessar o site, você deve logar com uma conta google atravś do botão no canto superior direito.
+              O login permitirá que você possa executar programas com mais longos.
 
               ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step0-signin.png?raw=true)
 
               #### Passo 1
 
-              A forma mais rápida de entender como Willow funciona é usando.
-              Selecione a linguagem Python na barra de ferramentas, e então cole o código de uma lista encadeada abaixo no editor de código (Editor).
+              Selecione a linguagem Python na barra de ferramentas, e então cole o código abaixo no `Editor`.
+              Esse código é uma implementação de lista encadeada, e será usado para mostrar as funcionalidades de Willow.
               ```
               class Node:
                   def __init__(self, v):
@@ -151,19 +154,20 @@ sessions:
               ll.append(input())
               ```
 
-              Cole também a entrada no editor de entrada (Input), que serão os valores que a lista usará para criar os nós.
+              Cole também as entradas do programa em `Input`, que são os valores que serão usados para criar os nós.
               ```
               0
               1
               2
               3
+              4
               ```
 
               ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step1-screen.png?raw=true)
 
               #### Passo 2
 
-              Para executar o código, basta clicar no botão play na barra de ferramentas.
+              Para executar o código, clique no botão play na barra de ferramentas.
 
               ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-play.png?raw=true)
 
@@ -173,9 +177,9 @@ sessions:
 
               #### Passo 3
 
-              Use as setas para direita e esquerda para navegar pelo código, navegue até o fim do programa.
+              Use as setas para direita e esquerda para navegar até o fim do programa.
               Você também pode clicar nos escopos do programa para pular para este ponto do programa.
-              Clique duplo pula para o fim do escopo ao invés do início.
+              Clique duplo pula para o fim de um escopo ao invés do início.
 
               ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step3-scopes.gif?raw=true)
 
@@ -185,42 +189,48 @@ sessions:
 
               ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step4-move.gif?raw=true)
 
-              Você pode também habilitar disposição automática, basta clicar duas vezes em qualquer objeto de uma estrutura de dados.
-              Se você mover este objeto a disposição automática e desativada.
+              Você pode também ativar a disposição automática, basta clicar duas vezes em qualquer objeto de uma estrutura de dados.
 
               ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step4-auto.gif?raw=true)
 
+              Ao ativar disposição automática, o contorno do nó na cabeça da lista estará levemente escureçido.
+              Se você mover este objeto a disposição automática e desativada.
+              
+              Com a disposição automática ativada, tente agora navegar pelo programa usando as setas do teclado e clicando nos escopos.
+
           - text: |
-              As duas proximas sessões contem um problema cada, que devem ser resolvidos com a ajuda de Willow.
-              Um código base será fornecido na descrição do problema, e você deverá completa-lo a fim de resolver o problema.
-              Após resolver, você deve **copiar todo o código** no campo de respostas.
-              As sessões de problemas possuem cronômetro, tente responder dentro do tempo limite, mas mesmo se você ultrapassar o tempo máximo, a resposta ainda pode ser submetida.
+              Nas duas proximas sessões um código base será fornecido na descrição do problema.
+              Você deverá completa-lo a fim de resolver o problema.
+
+              Após resolver, você deve **copiar todo o código** no campo de resposta.
+              Os problemas possuem cronômetro, tente responder dentro do tempo limite.
+              Você ainda poderá submeter sua resposta se ultrapassar o tempo limite.
   #
   #
-  - timer: 10
+  - timer: 600
     questions:
       - content:
           - text: |
               # Aqui vem o problema 1 (a escolher)
           - answer:
               id: q1
-              required: false
+              required: true
               type:
                 long:
-                  placeholder: cole todo o código aqui
+                  placeholder: Ao terminar, cole todo o código aqui
   #
   #
-  - timer: 15
+  - timer: 600
     questions:
       - content:
           - text: |
               # Aqui vem o problema 2 (a escolher)
           - answer:
               id: q2
-              required: false
+              required: true
               type:
                 long:
-                  placeholder: cole todo o código aqui
+                  placeholder: Ao terminar, cole todo o código aqui
   #
   #
   - timer: 0
@@ -229,55 +239,60 @@ sessions:
           - text: |
               ### Sem ferramentas
 
-              As proximas sessões contem problemas que devem ser resolvidos sem a ferramenta Willow.
-              Você pode usar o ambiente de programação que achar mais confortavel.
+              As duas próximas sessões contêm problemas que devem ser resolvidos sem usar ferramenta Willow.
+
+              Você pode usar o ambiente de programação (editor de texto, IDE, etc) que achar mais confortavel.
+              Você deve preparar seu ambiente de programação agora.
+            
               Você pode também, se desejar, usar sites que executam código online, como o https://repl.it/ .
 
           - text: |
-              As duas proximas sessões contem um problema cada, que devem ser resolvidos sem a ajuda de ferramentas.
-              Um código base será fornecido na descrição do problema, e você deverá completa-lo a fim de resolver o problema.
-              Após resolver, você deve **copiar todo o código** no campo de respostas.
-              As sessões de problemas possuem cronômetro, tente responder dentro do tempo limite, mas mesmo se você ultrapassar o tempo máximo, a resposta ainda pode ser submetida.
+              Nas duas proximas sessões um código base será fornecido na descrição do problema.
+              Você deverá completa-lo a fim de resolver o problema.
+
+              Após resolver, você deve **copiar todo o código** no campo de resposta.
+              Os problemas possuem cronômetro, tente responder dentro do tempo limite.
+              Você ainda poderá submeter sua resposta se ultrapassar o tempo limite.
   #
   #
-  - timer: 10
+  - timer: 600
     questions:
       - content:
           - text: |
               # Aqui vem o problema 3 (a escolher)
           - answer:
               id: q3
-              required: false
+              required: true
               type:
                 long:
-                  placeholder: cole todo o código aqui
+                  placeholder: Ao terminar, cole todo o código aqui
   #
   #
-  - timer: 15
+  - timer: 600
     questions:
       - content:
           - text: |
               # Aqui vem o problema 4 (a escolher)
           - answer:
               id: q4
-              required: false
+              required: true
               type:
                 long:
-                  placeholder: cole todo o código aqui
+                  placeholder: Ao terminar, cole todo o código aqui
   #
   #
   - timer: 0
     questions:
       - content:
           - text: |
-              ### Para finalizar, responda o que achou da ferramenta Willow
+              ### Para finalizar, responda o que achou de Willow
 
       - content:
           - text: |
-              #### Você concorda que a ferramenta Willow pode ajudar a entender o comportamento do código de um programa?
+              #### Você acha que Willow ajudou a entender o comportamento do seu código e resolver os problemas?
           - answer:
               id: r1
-              required: false
+              required: true
               type:
                 likert:
                   first: Discordo totalmente
@@ -285,5 +300,23 @@ sessions:
                   size: 5
       
       - content:
-        - text: |
-            #### Por mais questões, não pensei nelas ainda......
+          - text: |
+              #### Você usaria Willow novamente para estudar algum algoritmo?
+          - answer:
+              id: r2
+              required: true
+              type:
+                multi:
+                  options:
+                    - Sim
+                    - Não
+      
+      - content:
+          - text: |
+              #### Descreva o que você achou de Willow, problemas que encontrou ao usar, recomendações e idéias de funcionalidades que você acha que seriam interessantes.
+          - answer:
+              id: r3
+              required: true
+              type:
+                long:
+                  placeholder: Escreva aqui
