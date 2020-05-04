@@ -8,21 +8,24 @@
 
 Jessie adora biscoitos.
 Ele quer que a doçura de seus biscoitos seja maior que um valor `K`.
-Para conseguir isso, Jesse repetidamente mistura seus dois biscoitos menos doces e cria um biscoito combinado.
-O novo biscoito tem a doçura de `1 * (doçura do biscoito menos doce) + 2 * (doçura do 2º biscoito menos doce)`.
+Para conseguir isso, Jesse repetidamente mistura seus dois biscoitos menos doces (`b0` e `b1`, tal que `b0` é menos ou igualmente doce a `b1`) e cria um biscoito combinado (`bc`).
+
+O novo biscoito tem a doçura ` bc = b0 + 2 * b1`.
 
 Ele repete esse procedimento até que todos os biscoitos restantes tenham doçura maior ou igual a `K`.
 
 ## Tarefa
 
 Você deve completar a função `combinations(cookies, k)` que recebe uma lista com a doçura dos biscoitos e a doçura mínima `K`.
-Calcule a quantidade de misturas de biscoitos requeridos para que todos os biscoitos tenham a doçura desejada por Jessie.
+Calcule quantas misturas de biscoitos são nescessárias para que todos os biscoitos tenham ao menos a doçura `K`.
 Se a doçura não pode ser atingida, retorne `-1`.
 
 ## Entrada
 
 A primeira linha da entrada é uma lista de números que representa a doçura de cada biscoito.
 A segunda linha contem o valor `K`, a doçura requerida.
+
+Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
 
 ## Código
 
@@ -59,35 +62,33 @@ def combinations(cookies, k):
 
 
 if __name__ == '__main__':
-    cookies = [int(i) for i in input().split()]
-    k = int(input())
-    print(combinations(cookies, k))
+    try:
+        while True:
+            cookies = [int(i) for i in input().split()]
+            k = int(input())
+            print(combinations(cookies, k))
+            input()
+    except EOFError:
+        pass
 ```
 
 ## Exemplos
 
+Entrada:
 ```
-# 1
-## Input
 7 1 9 8 5 9
 50
 
-## Output
-5
-
-# 2
-## Input 
 7 2 5 1 3 2 6 7
 70
 
-## Output
-7
-
-# 3
-## Input 
 2 2 5 3 1 1
 45
+```
 
-## Output
+Saída:
+```
+5
+7
 -1
 ```
