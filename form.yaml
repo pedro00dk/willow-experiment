@@ -41,7 +41,7 @@ sessions:
               Analisar o desempenho dos participantes na resolução de problemas de Algoritmos e Estruturas de Dados em duas situações, são essas:
               - Auxiliado pela ferramenta Willow
               - Sem o auxílio de ferramentas
-              
+
               Com o propósito de comparar as situações.
               Com respeito ao tempo de resolução dos problemas e qualidade das respostas.
 
@@ -112,7 +112,7 @@ sessions:
               Os passos proverão um treinamento básico de como usar Willow.
 
               Primeiro clique link abaixo para acessar o site do Willow.
-              
+
               http://willowbeta.xyz
 
               Ao acessar o site, você deve logar com uma conta google atravś do botão no canto superior direito.
@@ -195,7 +195,7 @@ sessions:
 
               Ao ativar disposição automática, o contorno do nó na cabeça da lista estará levemente escureçido.
               Se você mover este objeto a disposição automática e desativada.
-              
+
               Com a disposição automática ativada, tente agora navegar pelo programa usando as setas do teclado e clicando nos escopos.
 
           - text: |
@@ -211,7 +211,87 @@ sessions:
     questions:
       - content:
           - text: |
-              # Aqui vem o problema 1 (a escolher)
+              # Inverta a Lista
+
+              ## Problema
+
+              Uma lista encadeada simples permite que se navegue apenas a partir da cabeça em direção a calda da lista.
+              Algumas vezes é preciso navegar na direção contrária com frequência, e para que isso seja possivel, a direção da lista deve ser invertida.
+              Após a inversão da lista, a calda antiga se torna a cabeça nova, e a cabeça antiga se torna a calda nova.
+
+              Você deve completar a função `reverse(head)` que recebe um argumento:
+              - `head`: o nó cabeça de uma lista encadeada
+
+              A função deve **retornar** o nó da cabeça da lista após a sua inversão.
+
+              ## Entrada
+
+              A entrada é composta de apenas uma linha, que são os números que representam a lista encadeada.
+              Haverá sempre ao menos um elemento na lista.
+
+              Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
+
+              ## Código
+
+              ```python
+              # complete a função reverse(head) abaixo
+              def reverse(head):
+                  # solução
+                  pointer, reversed = head, None
+                  while pointer is not None:
+                      next_pointer = pointer.next
+                      pointer.next = reversed
+                      reversed = pointer
+                      pointer = next_pointer
+                  return reversed
+                  #
+                  return None # a cabeça da lista invertida
+                  
+              class ListNode:
+                  def __init__(self, v):
+                      self.v = v
+                      self.next = None
+                  
+                  
+              if __name__ == '__main__':
+                  while True:
+                      head, tail = None, None
+                      for v in (int(v) for v in input().split()):
+                          if not head: head = tail = ListNode(v)
+                          else:
+                              tail.next = ListNode(v  )
+                              tail = tail.next
+                      tail = None
+                      head = reverse(head)
+                      while head is not None:
+                          print(head.v, end=' ' if head.next is not None else '\n')
+                          head = head.next
+                      try:
+                          input()
+                      except EOFError:
+                          break
+              ```
+                      
+              ## Exemplos
+                      
+              Entrada:
+              ```
+              4
+
+              10 20 30
+
+              0 2 3 4 5 8 9
+
+              9 8 5 4 3 2 0
+              ```
+
+              Saída:
+              ```
+              4
+              30 20 10
+              9 8 5 4 3 2 0
+              0 2 3 4 5 8 9
+              ```
           - answer:
               id: q1
               required: true
@@ -224,7 +304,100 @@ sessions:
     questions:
       - content:
           - text: |
-              # Aqui vem o problema 2 (a escolher)
+              # Biscoitos de Jessie
+
+              ## Problema
+
+              Jessie adora biscoitos.
+              Ele quer que a doçura de seus biscoitos seja maior que um valor `k`.
+              Para conseguir isso, Jessie repetidamente mistura seus dois biscoitos menos doces `c0` e `c1`, e cria um biscoito combinado `c`.
+
+              Dado que o biscoito `c0` é menos ou igualmente doce a `c1`, o novo biscoito tem a doçura `c = c0 + 2 * c1`.
+
+              Ele repete esse procedimento até que todos os biscoitos restantes tenham doçura maior ou igual a `k`.
+
+              Você deve completar a função `combinations(cookies, k)` que recebe dois argumentos:
+
+              -   `cookies`: uma lista contendo as doçuras dos biscoitos
+              -   `k`: a doçura mínima esperada
+
+              A função deve **retornar** quantas misturas de biscoitos são nescessárias para que todos os biscoitos tenham ao menos a doçura `k`.
+              Se a doçura não pode ser atingida, a função deve **retornar** `-1`.
+
+              ## Entrada
+
+              A primeira linha da entrada é uma lista de números que representam a doçura de cada biscoito.
+              A segunda linha contem o valor `k`, a doçura requerida.
+
+              Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
+
+              ## Código
+
+              ```python
+              # complete a função combinations(cookies, k) abaixo
+              def combinations(cookies, k):
+                  # solução
+                  def heapify(i):
+                      l, r = i * 2 + 1, i * 2 + 2
+                      smaller = i
+                      smaller = l if l < len(cookies) and cookies[l] < cookies[smaller] else smaller
+                      smaller = r if r < len(cookies) and cookies[r] < cookies[smaller] else smaller
+                      if smaller != i:
+                          cookies[i], cookies[smaller] = cookies[smaller], cookies[i]
+                          heapify(smaller)
+                      
+                  for i in range(len(cookies) // 2 - 1, -1, -1):
+                      heapify(i)
+                  
+                  merges = 0
+                  while len(cookies) >= 2 and cookies[0] < k:
+                      cookie_a = cookies[0]
+                      cookies[0] = cookies.pop()
+                      heapify(0)
+                      cookie_b = cookies[0]
+                      new_cookie = cookie_a + cookie_b * 2
+                      cookies[0] = new_cookie
+                      heapify(0)
+                      merges += 1
+                  
+                  return merges if cookies[0] >= k else -1
+                  #
+                  return 0 # a quantidade de combinações de biscoitos
+                  
+                  
+              if __name__ == '__main__':
+                  while True:
+                      cookies = [int(i) for i in input().split()]
+                      k = int(input())
+                      print(combinations(cookies, k))
+                      try:
+                          input()
+                      except EOFError:
+                          pass
+              ```
+                      
+              ## Exemplos
+                      
+              Entrada:
+
+              ```
+              7 1 9 8 5 9
+              50
+
+              7 2 5 1 3 2 6 7
+              70
+
+              2 2 5 3 1 1
+              45
+              ```
+
+              Saída:
+
+              ```
+              5
+              7
+              -1
+              ```
           - answer:
               id: q2
               required: true
@@ -243,7 +416,7 @@ sessions:
 
               Você pode usar o ambiente de programação (editor de texto, IDE, etc) que achar mais confortavel.
               Você deve preparar seu ambiente de programação agora.
-            
+
               Você pode também, se desejar, usar sites que executam código online, como o https://repl.it/ .
 
           - text: |
@@ -259,7 +432,86 @@ sessions:
     questions:
       - content:
           - text: |
-              # Aqui vem o problema 3 (a escolher)
+              # Primeiro Ancestral Comum
+
+              ## Problema
+                    
+              Em uma árvore binária, o primeiro ancestral comum de dois nós `va` e `vb` é o parente em comum destes nós que é está longe da raiz da árvore.
+              Se `va` é parente de `vb` ou vice-versa, então o nó parente também é o ancestral comum.
+                    
+              Você deve completar a função `lca(root, va, vb)` que recebe três argumentos:
+
+              -   `root`: o nó raiz de uma árvore binária
+              -   `va` e `vb`: valores de nós na árvore, dos quais se quer obter o ancestral comum
+
+              A função deve **retornar** o valor do ancestral comum mais próximo de `va` e `vb`.
+
+              ## Entrada
+
+              A primeira linha da entrada é uma lista de números que seram inseridos um a um na BST.
+              A segunda linha contem os valores `va` e `vb`.
+              `va` e `vb` sempre contidos na BST.
+
+              Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
+
+              ## Código
+
+              ```python
+              # complete a função lca(root, va, vb) abaixo
+              def lca(root, va, vb):
+                  # solução
+                  va, vb = (va, vb) if va <= vb else (vb, va)
+                  pointer = root
+                  while not va <= pointer.v <= vb:
+                      pointer = pointer.left if pointer.v > vb else pointer.right
+                  return pointer.v
+                  #
+                  return 0 # o valor do primeiro ancestral comum entre va e vb
+                  
+                  
+              class BSTNode:
+                  def __init__(self, v):
+                      self.v = v
+                      self.left = None
+                      self.right = None
+                  
+                  
+              if __name__ == '__main__':
+                  while True:
+                      root = None
+                      for v in (int(v) for v in input().split()):
+                          parent, node = None, root
+                          while node is not None and v != node.v: node, parent = (node.left if v < node.v else node.right), node
+                          if node is not None: continue
+                          if parent is None: root = BSTNode(v)
+                          elif v < parent.v: parent.left = BSTNode(v)
+                          else: parent.right = BSTNode(v)
+                      va, vb = [int(v) for v in input().split()]
+                      print(lca(root, va, vb))
+                      try:
+                          input()
+                      except EOFError:
+                          break
+              ```
+                      
+              ## Exemplos
+                      
+              Entrada:
+
+              ```
+              7 0 8 5 9
+              5 9
+
+              6 3 1 5 4 9 7
+              1 4
+              ```
+
+              Saída:
+
+              ```
+              7
+              3
+              ```
           - answer:
               id: q3
               required: true
@@ -272,7 +524,102 @@ sessions:
     questions:
       - content:
           - text: |
-              # Aqui vem o problema 4 (a escolher)
+              # Detecção de Cíclo
+
+              ## Problema
+
+              Diz-se que uma lista encadeada contém um ciclo se algum nó for visidado mais de uma vez quando se percorre a lista.
+
+              ```
+              head
+                |
+                v
+              +---+    next     +---+    next     +---+
+              | 1 |---------->  | 2 |---------->  | 3 |---+
+              +---+             +---+             +---+   |
+                                  ^                       |
+                                  |          next         |
+                                  +-----------------------+
+              ```
+
+              Você deve completar a função `has_cycle(head)` que recebe um argumento:
+              - `head`: o nó cabeça de uma lista encadeada
+
+              A função deve **retornar** o valor `True` se a lista contém um cíclo ou `false` caso contrário.
+
+              ## Entrada
+
+              A entrada é composta de apenas uma linha, que são os números que representam a lista encadeada, caso haja um ciclo na lista, o elemento que inicia o cíclo é precedido de um `#`.
+              Para a ilustração acima, a entrada seria `1 # 2 3`.
+              Haverá sempre ao menos um elemento na lista.
+
+              Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
+
+              ## Código
+
+              ```python
+              # complete a função has_cycle(head) abaixo
+              def has_cycle(head):
+                  # solução
+                  slow, fast = head, head
+                  while fast is not None and fast.next is not None:
+                      slow, fast = slow.next, fast.next.next
+                      if slow == fast:
+                          return True
+                  return False
+                  #
+                  return False # se a lista contém cíclos
+                      
+              class ListNode:
+                  def __init__(self, v):
+                      self.v = v
+                      self.next = None
+                  
+                  
+              if __name__ == '__main__':
+                  while True:
+                      head, tail, put_cycle, cycle = None, None, False, None
+                      for v in input().split():
+                          if v == '#':
+                              put_cycle = True
+                              continue
+                          v = int(v)
+                          if not head: head = tail = ListNode(v)
+                          else:
+                              tail.next = ListNode(v  )
+                              tail = tail.next
+                          if put_cycle and cycle is None:
+                              cycle = tail
+                      if cycle is not None:
+                          tail.next = cycle
+                      put_cycle, cycle, tail = False, None, None
+                      print(has_cycle(head))
+                      try:
+                          input()
+                      except EOFError:
+                          break
+              ```
+                      
+              ## Exemplos
+                      
+              Entrada:
+              ```
+              0 0 # 0 0 0 0
+
+              0 1 2 3 4 # 5
+
+              # 0 1 2 3 4 5
+
+              0 1 2 3 4 5
+              ```
+
+              Saída:
+              ```
+              True
+              True
+              True
+              False
+              ```
           - answer:
               id: q4
               required: true
@@ -298,7 +645,7 @@ sessions:
                   first: Discordo totalmente
                   last: Concordo totalmente
                   size: 5
-      
+
       - content:
           - text: |
               #### Você usaria Willow novamente para estudar algum algoritmo?
@@ -310,7 +657,7 @@ sessions:
                   options:
                     - Sim
                     - Não
-      
+
       - content:
           - text: |
               #### Descreva o que você achou de Willow, problemas que encontrou ao usar, recomendações e idéias de funcionalidades que você acha que seriam interessantes.
