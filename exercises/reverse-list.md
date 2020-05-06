@@ -2,96 +2,84 @@
 
 -   assunto: Lista encadeada
 -   categoria: Implementar funcionalidade
--   dificuldade: facil
+-   dificuldade: fácil
 
 ## Problema
 
-E fornecida a referência para a cabeça de uma lista encadeada.
-Implemente uma função que inverte _in-place_ a lista recebida.
-A referência inicial pode ser nula (`None`), implicando que a lista é vazia.
+Uma lista encadeada simples permite que se navegue apenas a partir da cabeça em direção a calda da lista.
+Algumas vezes é preciso navegar na direção contrária com frequência, e para que isso seja possivel, a direção da lista deve ser invertida.
+Após a inversão da lista, a calda antiga se torna a cabeça nova, e a cabeça antiga se torna a calda nova.
 
-## Tarefa
+Você deve completar a função `reverse(head)` que recebe um argumento:
+- `head`: o nó cabeça de uma lista encadeada
 
-Você deve completar a função `reverse(head)` que recebe um argumento - a cabeça da lista encadeada.
-
-Não é necessario implementar qualquer lógica para ler entrada ou imprimir a saida.
-As entradas e saidas do programa são procesadas automáticamente.
+A função deve **retornar** o nó da cabeça da lista após a sua inversão.
 
 ## Entrada
 
-A entrada é uma lista de números que representa a lista encadeada. O primeiro número estará no ínicio da lista.
+A entrada é composta de apenas uma linha, que são os números que representam a lista encadeada.
+Haverá sempre ao menos um elemento na lista.
+
+Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
 
 ## Código
 
 ```python
-class LinkedList:
-    def __init__(self, data, next=None):
-        self.data = data
-        self.next = next
-
-    def __str__(self):
-        string = ''
-        pointer = self
-        while pointer is not None:
-            string += f'{pointer.data}  '
-            pointer = pointer.next
-        return string
-
-
 # complete a função reverse(head) abaixo
 def reverse(head):
-    # possivel solução
-    reversed_list = None
-    pointer = head
-    while (pointer != None):
+    # solução
+    pointer, reversed = head, None
+    while pointer is not None:
         next_pointer = pointer.next
-        pointer.next = reversed_list
-        reversed_list = pointer
+        pointer.next = reversed
+        reversed = pointer
         pointer = next_pointer
-    return reversed_list
+    return reversed
     #
-    pass
+    return None # a cabeça da lista invertida
+
+class ListNode:
+    def __init__(self, v):
+        self.v = v
+        self.next = None
 
 
 if __name__ == '__main__':
-    linked_list = None
-    tail = linked_list
-    try:
-        for data in input().split():
-            if not tail: tail = LinkedList(data)
+    while True:
+        head, tail = None, None
+        for v in (int(v) for v in input().split()):
+            if not head: head = tail = ListNode(v)
             else:
-                tail.next = LinkedList(data)
+                tail.next = ListNode(v  )
                 tail = tail.next
-            if not linked_list: linked_list = tail
-    except: pass
-    tail = None
-    linked_list = reverse(linked_list)
-    print(linked_list)
+        tail = None
+        head = reverse(head)
+        while head is not None:
+            print(head.v, end=' ' if head.next is not None else '\n')
+            head = head.next
+        try:
+            input()
+        except EOFError:
+            break
 ```
 
 ## Exemplos
 
+Entrada:
 ```
-# 1
-## Input
+4
+
+10 20 30
+
 0 2 3 4 5 8 9
 
-## Expected Output
 9 8 5 4 3 2 0
+```
 
-
-# 2
-## Input
-10
-
-## Output
-10
-
-
-# 3
-## Input <empty>
-
-
-## Output
-None
+Saída:
+```
+4
+30 20 10
+9 8 5 4 3 2 0
+0 2 3 4 5 8 9
 ```
