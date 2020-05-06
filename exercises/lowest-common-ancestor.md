@@ -6,7 +6,7 @@
 
 ## Problema
 
-Em uma árvore binária, o primeiro ancestral comum de dois nós `va` e `vb` é o parente em comum destes nós que é está longe da raiz da árvore.
+Em uma árvore binária, o primeiro ancestral comum de dois nós `va` e `vb` é o parente em comum destes nós que é está mais longe da raiz da árvore.
 Se `va` é parente de `vb` ou vice-versa, então o nó parente também é o ancestral comum.
 
 Você deve completar a função `lca(root, va, vb)` que recebe três argumentos:
@@ -20,7 +20,7 @@ A função deve **retornar** o valor do ancestral comum mais próximo de `va` e 
 
 A primeira linha da entrada é uma lista de números que seram inseridos um a um na BST.
 A segunda linha contem os valores `va` e `vb`.
-`va` e `vb` sempre contidos na BST.
+Os valores `va` e `vb` estão sempre contidos na BST.
 
 Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
 
@@ -56,6 +56,7 @@ if __name__ == '__main__':
             if parent is None: root = BSTNode(v)
             elif v < parent.v: parent.left = BSTNode(v)
             else: parent.right = BSTNode(v)
+        parent, node = None, None
         va, vb = [int(v) for v in input().split()]
         print(lca(root, va, vb))
         try:
