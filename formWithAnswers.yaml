@@ -98,20 +98,6 @@ sessions:
               type:
                 short:
                   placeholder: Periodo que está cursando
-
-          - text: |
-              ##### Dados bancários
-
-              Para receber a recompensa você deve informar os seus dados bancários.
-
-              Caso não queria fornecê-los, você ainda pode participar do experimento, mas não receberá a recompensa.
-
-          - answer:
-              id: bank
-              required: false
-              type:
-                short:
-                  placeholder:  nome completo, cpf, banco, agencia, conta
   #
   #
   - timer: 0
@@ -250,7 +236,16 @@ sessions:
               ```python
               # complete a função reverse(head) abaixo
               def reverse(head):
-                  return None # deve retornar a cabeça da lista invertida
+                  # solução
+                  pointer, reversed = head, None
+                  while pointer is not None:
+                      next_pointer = pointer.next
+                      pointer.next = reversed
+                      reversed = pointer
+                      pointer = next_pointer
+                  return reversed
+                  #
+                  return None # a cabeça da lista invertida
                   
               class ListNode:
                   def __init__(self, v):
@@ -341,7 +336,33 @@ sessions:
               ```python
               # complete a função combinations(cookies, k) abaixo
               def combinations(cookies, k):
-                  return 0 # deve retornar a quantidade de combinações de biscoitos
+                  # solução
+                  def heapify(i):
+                      l, r = i * 2 + 1, i * 2 + 2
+                      smaller = i
+                      smaller = l if l < len(cookies) and cookies[l] < cookies[smaller] else smaller
+                      smaller = r if r < len(cookies) and cookies[r] < cookies[smaller] else smaller
+                      if smaller != i:
+                          cookies[i], cookies[smaller] = cookies[smaller], cookies[i]
+                          heapify(smaller)
+                      
+                  for i in range(len(cookies) // 2 - 1, -1, -1):
+                      heapify(i)
+                  
+                  merges = 0
+                  while len(cookies) >= 2 and cookies[0] < k:
+                      cookie_a = cookies[0]
+                      cookies[0] = cookies.pop()
+                      heapify(0)
+                      cookie_b = cookies[0]
+                      new_cookie = cookie_a + cookie_b * 2
+                      cookies[0] = new_cookie
+                      heapify(0)
+                      merges += 1
+                  
+                  return merges if cookies[0] >= k else -1
+                  #
+                  return 0 # a quantidade de combinações de biscoitos
                   
                   
               if __name__ == '__main__':
@@ -439,7 +460,13 @@ sessions:
               # complete a função lca(root, va, vb) abaixo
               def lca(root, va, vb):
                   # solução
-                  return 0 # deve retornar o valor do primeiro ancestral comum entre va e vb
+                  va, vb = (va, vb) if va <= vb else (vb, va)
+                  pointer = root
+                  while not va <= pointer.v <= vb:
+                      pointer = pointer.left if pointer.v > vb else pointer.right
+                  return pointer.v
+                  #
+                  return 0 # o valor do primeiro ancestral comum entre va e vb
                   
                   
               class BSTNode:
@@ -533,7 +560,15 @@ sessions:
               ```python
               # complete a função has_cycle(head) abaixo
               def has_cycle(head):
-                  return False # deve retornar se a lista contém cíclos
+                  # solução
+                  slow, fast = head, head
+                  while fast is not None and fast.next is not None:
+                      slow, fast = slow.next, fast.next.next
+                      if slow == fast:
+                          return True
+                  return False
+                  #
+                  return False # se a lista contém cíclos
                       
               class ListNode:
                   def __init__(self, v):
