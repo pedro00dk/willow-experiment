@@ -1,16 +1,32 @@
-# Biscoitos de Jessie
+# Jessie Cookies
 
--   assunto: Heap
--   categoria: Implementar funcionalidade
--   dificuldade: médio
+<!--english-->
 
-## Problema
+Jessie loves cookies.
+He wants the sweetness of his cookies to be greater then a value `k`.
+To archieve that, Jessie repeatedly mixes his two less sweet cookies `c0` and `c1`, and creates a new combined cookie `c`.
+
+Let the cookie `c0` less or as swwet as `c1`, the new cookie will have the sweeteness `c = c0 + 2 * c1`.
+
+He repeats the proceduer until all of his remaining cookies have the sweetness greater than or equal `k`.
+
+You have to complete the function `combinations(cookies, k)`, which takes two arguments:
+
+-   `cookies`: a list containing thw cookies sweetness
+-   `k`: the minimum expected sweetness
+
+The function must **return** how many cookie mixes are necessary for all cookies to have at least `k` sweetness.
+If the sweetness can not be archieved, the function must **return** `-1`.
+
+<!--english-->
+
+<!--portuguese-->
 
 Jessie adora biscoitos.
 Ele quer que a doçura de seus biscoitos seja maior que um valor `k`.
 Para conseguir isso, Jessie repetidamente mistura seus dois biscoitos menos doces `c0` e `c1`, e cria um biscoito combinado `c`.
 
-Dado que o biscoito `c0` é menos ou igualmente doce a `c1`, o novo biscoito tem a doçura `c = c0 + 2 * c1`.
+Dado que o biscoito `c0` é menos ou igualmente doce a `c1`, o novo biscoito terá doçura `c = c0 + 2 * c1`.
 
 Ele repete esse procedimento até que todos os biscoitos restantes tenham doçura maior ou igual a `k`.
 
@@ -22,17 +38,32 @@ Você deve completar a função `combinations(cookies, k)` que recebe dois argum
 A função deve **retornar** quantas misturas de biscoitos são nescessárias para que todos os biscoitos tenham ao menos a doçura `k`.
 Se a doçura não pode ser atingida, a função deve **retornar** `-1`.
 
-## Entrada
+<!--portuguese-->
 
-A primeira linha da entrada é uma lista de números que representam a doçura de cada biscoito.
-A segunda linha contem o valor `k`, a doçura requerida.
+## Input
+
+<!--english-->
+
+The first input line contains a list of numbers when represent the sweetness of each cookie.
+The second line contains `k`.
+
+Multiple inputs can be provided at once, ther must be an empty line between each input line.
+
+<!--english-->
+
+<!--portuguese-->
+
+A primeira linha da entrada contém uma lista de números que representam a doçura de cada biscoito.
+A segunda linha contem `k`.
 
 Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
 
-## Código
+<!--portuguese-->
+
+## Code
 
 ```python
-# complete a função combinations(cookies, k) abaixo
+# implement the function below
 def combinations(cookies, k):
     # solução
     def heapify(i):
@@ -60,7 +91,6 @@ def combinations(cookies, k):
 
     return merges if cookies[0] >= k else -1
     #
-    return 0 # a quantidade de combinações de biscoitos
 
 
 if __name__ == '__main__':
@@ -74,9 +104,13 @@ if __name__ == '__main__':
             pass
 ```
 
-## Exemplos
+```java
 
-Entrada:
+```
+
+## Examples
+
+Input:
 
 ```
 7 1 9 8 5 9
@@ -89,7 +123,7 @@ Entrada:
 45
 ```
 
-Saída:
+Output:
 
 ```
 5
