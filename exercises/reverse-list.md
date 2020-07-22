@@ -1,4 +1,4 @@
-# Invert Linked List
+# Reverse List
 
 <!--english-->
 

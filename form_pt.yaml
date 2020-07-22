@@ -1,0 +1,664 @@
+submission:
+  url: https://us-central1-json-form-63252.cloudfunctions.net/acceptSubmission
+  unique: email
+order:
+  orders:
+    - - 0
+      - 1
+      - 5
+      - 3
+      - 7
+      - 2
+      - 6
+      - 4
+      - 8
+      - 9
+    - - 0
+      - 1
+      - 6
+      - 3
+      - 8
+      - 2
+      - 5
+      - 4
+      - 7
+      - 9
+  url: https://us-central1-json-form-63252.cloudfunctions.net/getOrder
+sessions:
+  #
+  #
+  - timer: 0
+    questions:
+      - content:
+          - text: |
+              ### Uma análise do impacto de Willow na assistência à resolução de problemas de Algoritmos e Estruturas de Dados.
+
+              #### Pesquisadores
+              - Pedro Henrique Sousa de Moraes -- phsm@cin.ufpe.br
+              - Leopoldo Motta Teixeira -- lmt@cin.ufpe.br
+
+              #### Objetivo do Estudo
+              Analisar o desempenho dos participantes na resolução de problemas de Algoritmos e Estruturas de Dados em duas situações::
+              - Auxiliado pela ferramenta Willow
+              - Sem o auxílio de ferramentas
+
+              Com o propósito de comparar as situações.
+              Com respeito ao tempo de resolução dos problemas e qualidade das respostas (corretude, complexidade assintótica).
+
+              Caso necessite de maiores esclarecimentos sobre algum item mencionado, ou precise de informações que não foram incluídas, entre em contato com os pesquisadores através de seus endereços de e-mail.
+
+              #### Privacidade
+              As informações obtidas a partir de sua participação neste estudo serão mantidas estritamente confidenciais.
+              Qualquer material será referenciado somente por um identificador.
+              Meramente para registro do trabalho, você deverá fornecer seu nome, email e informaçẽos demográficas.
+              Todos os resultados apresentados em publicações científicas futuras serão anonimizados.
+
+              #### Procedimentos
+              Esse formulário conta com quatro problemas de algoritmos e estruturas de dados.
+              Os dois primeiros deverão ser respondidos sem o uso de Willow, os dois restantes, com Willow
+              Um treinamento básico de Willow será apresentado antes de de seus problemas, para que sejam introduzidos conteitos básicos da ferramenta.
+
+              Ao iniciar a resolução de um problema, cronômetro será apresentado.
+              Não é possivel para-lo, mas você ainda poderá submeter sua resposta caso ultrapasse o tempo limite.
+              Após cada problema, há uma sessão de transição, onde você pode parar, nenhum tempo será contabilizado.
+
+              #### Tempo
+              Os problemas a serem resolvidos neste questionário tem no total, um tempo esperado de 40 minutos para serem resolvidos.
+
+              #### Observações
+              Willow é uma ferramenta em estado de desenvolvimento, por isso você deve usar o google chrome ou qualquer navegador baseado no chromium (Opera, Brave, Vivaldi, etc).
+
+          - text: |
+              ##### Preencha os dados abaixo.
+
+          - answer:
+              id: name
+              required: true
+              type:
+                short:
+                  placeholder: Seu nome
+
+          - answer:
+              id: email
+              required: true
+              type:
+                short:
+                  placeholder: Seu endereço de email
+
+          - text: |
+              ###### Selecione sua formação.
+
+          - answer:
+              id: formation
+              required: true
+              type:
+                multi:
+                  options:
+                    - granduando
+                    - pós-graduando
+                    - professor
+                    - desenvolvedor formado
+
+          - text: |
+              ###### Caso seja graduando, pós-graduando ou professor, preencha as informações abaixo.
+
+          - answer:
+              id: university
+              required: false
+              type:
+                short:
+                  placeholder: Nome de sua institição de ensino
+
+          - answer:
+              id: course
+              required: false
+              type:
+                short:
+                  placeholder: Nome do seu curso
+
+          - answer:
+              id: period
+              required: false
+              type:
+                short:
+                  placeholder: Periodo que está cursando (apenas graduandos)
+  #
+  #
+  - timer: 0
+    questions:
+      - content:
+          - text: |
+              ### Sem ferramentas
+
+              Nas proximas sessões, dois problemas serão apresentados.
+              Você pode usar o ambiente de programação (editor de texto, IDE, etc) que achar mais confortavel.
+              Você deve preparar seu ambiente de programação agora.
+
+              Você pode também, se desejar, usar sites que executam código online, como o https://repl.it/ .
+
+          - text: |
+              Em cada problema, será fornecido um código base que já lê entradas e imprime as saídas do programa.
+              Você deverá apenas implementar uma função apresentada no problema.
+              Após resolver, você deve **copiar todo o código** no campo de resposta.
+              Você ainda poderá submeter sua resposta se ultrapassar o tempo limite.
+
+              Caso precise parar, há uma sessão de espera entre os problemas, não é possivel parar o cronômetro durante a solução do problema.
+  #
+  #
+  - timer: 0
+    questions:
+      - content:
+          - text: |
+              ### Willow
+
+              Nas proximas sessões, dois problemas serão apresentados.
+              Você deve usar o ambiente Willow para resolver esses problemas.
+
+              #### Tutorial
+
+              Antes de avançar para os problemas, você deve acessar Willow e seguir os passos abaixo.
+              Os passos proverão um treinamento básico de como usar Willow.
+
+              Primeiro clique link abaixo para acessar o site do Willow.
+
+              https://willow-beta.web.app/
+
+              Ao acessar o site, você deve logar com uma conta google através do botão no canto superior direito.
+              O login permitirá que você execute programas mais longos.
+
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step0-signin.png?raw=true)
+
+              #### Passo 1
+
+              Selecione a linguagem **Python** na barra de ferramentas, e então cole o código abaixo em `Editor`Nas proximas sessões, dois problemas serão apresentados..
+              Esse código é uma implementação de lista encadeada, e será usado para mostrar as funcionalidades de Willow.
+              ```
+              class Node:
+                  def __init__(self, v):
+                      self.next = None
+                      self.v = v
+                      self.prev = None
+                  
+              class LinkedList:
+                  def __init__(self):
+                      self.head = self.tail = None
+                      self.size = 0
+                  
+                  def append(self, v):
+                      new = Node(v)
+                      if self.size == 0:
+                          self.head = self.tail = new
+                      else:
+                          self.tail.next = new
+                          new.prev = self.tail
+                          self.tail = new
+                      self.size += 1
+                      
+              ll = LinkedList()
+              ll.append(input())
+              ll.append(input())
+              ll.append(input())
+              ll.append(input())
+              ll.append(input())
+              ```
+
+              Cole também as entradas do programa em `Input`, que são os valores que serão usados para criar os nós.
+              ```
+              0
+              1
+              2
+              3
+              4
+              ```
+
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step1-screen.png?raw=true)
+
+              #### Passo 2
+
+              Para executar o código, clique no botão play na barra de ferramentas.
+
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-play.png?raw=true)
+
+              Aguarde alguns segundos até que a visualização seja gerada.
+
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-screen.png?raw=true)
+
+              #### Passo 3
+
+              Use as setas para direita e esquerda para navegar até o fim do programa.
+              Você também pode clicar nos escopos do programa para pular para este ponto do programa.
+              Clique duplo pula para o fim de um escopo ao invés do início.
+
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step3-scopes.gif?raw=true)
+
+              #### Passo 4
+
+              Tente agora arrastar os objetos na heap.
+
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step4-move.gif?raw=true)
+
+              Você pode também ativar a disposição automática, basta clicar duas vezes em qualquer objeto interno da lista (nos da lista).
+
+              ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step4-auto.gif?raw=true)
+
+              Ao ativar disposição automática, o contorno dos nós da lista estará levemente escureçido.
+              Se você mover qualquer nó, a disposição automática será desativada.
+
+              Com a disposição automática ativada, tente agora navegar pelo programa usando as setas do teclado e clicando nos escopos.
+
+          - text: |
+              Em cada problema, será fornecido um código base que já lê entradas e imprime as saídas do programa.
+              Você deverá apenas implementar uma função apresentada no problema.
+              Após resolver, você deve **copiar todo o código** no campo de resposta.
+              Você ainda poderá submeter sua resposta se ultrapassar o tempo limite.
+
+              Caso precise parar, há uma sessão de espera entre os problemas, não é possivel parar o cronômetro durante a solução do problema.
+  #
+  #
+  - timer: 0
+    questions:
+      - content:
+          - text: |
+              # Intervalo
+
+              Caso precise parar o experimento, este é um bom momento.
+              Ao proseguir, o próximo problema será apresentado.
+  - timer: 0
+    questions:
+      - content:
+          - text: |
+              # Intervalo
+
+              Caso precise parar o experimento, este é um bom momento.
+              Ao proseguir, o próximo problema será apresentado.
+  #
+  #
+  - timer: 600
+    questions:
+      - content:
+          - text: |
+              # Reverse List
+                    
+              Uma lista encadeada simples permite que se navegue apenas a partir da cabeça em direção a calda da lista.
+              Algumas vezes é preciso navegar na direção contrária com frequência, e para que isso seja possivel, a direção da lista deve ser invertida.
+              Após a inversão da lista, a calda antiga se torna a cabeça nova, e a cabeça antiga se torna a calda nova.
+                    
+              Você deve completar a função `reverse(head)` que recebe um argumento:
+
+              -   `head`: o nó cabeça de uma lista encadeada
+
+              A função deve **retornar** o nó da cabeça da lista após a sua inversão.
+
+              ## Input
+
+              A entrada é composta de apenas uma linha, que contêm números que compoẽm a lista encadeada.
+              Haverá sempre ao menos um elemento na lista.
+
+              Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
+
+              ## Code
+
+              ```python
+              # implement the function below
+              def reverse(head):
+                  pass
+                  
+              class ListNode:
+                  def __init__(self, v):
+                      self.v = v
+                      self.next = None
+                  
+                  
+              if __name__ == '__main__':
+                  while True:
+                      head, tail = None, None
+                      for v in (int(v) for v in input().split()):
+                          if not head: head = tail = ListNode(v)
+                          else:
+                              tail.next = ListNode(v)
+                              tail = tail.next
+                      head = reverse(head)
+                      while head is not None:
+                          print(head.v, end=' ' if head.next is not None else '\n')
+                          head = head.next
+                      try:
+                          input()
+                      except EOFError:
+                          break
+              ```
+                      
+              ## Examples
+                      
+              Input:
+
+              ```
+              4
+
+              10 20 30
+
+              0 2 3 4 5 8 9
+
+              9 8 5 4 3 2 0
+              ```
+
+              Output:
+
+              ```
+              4
+              30 20 10
+              9 8 5 4 3 2 0
+              0 2 3 4 5 8 9
+              ```
+          - answer:
+              id: q1
+              required: true
+              type:
+                long:
+                  placeholder: Ao terminar, cole todo o código aqui
+  #
+  #
+  - timer: 600
+    questions:
+      - content:
+          - text: |
+              # Cycle Detection
+
+              Diz-se que uma lista encadeada contém um ciclo se algum nó for visidado mais de uma vez quando se percorre a lista.
+
+              ```
+              head
+                |
+                v
+              +---+    next     +---+    next     +---+
+              | 1 |---------->  | 2 |---------->  | 3 |---+
+              +---+             +---+             +---+   |
+                                  ^                       |
+                                  |          next         |
+                                  +-----------------------+
+              ```
+
+              Você deve completar a função `has_cycle(head)` que recebe um argumento:
+
+              -   `head`: o nó cabeça de uma lista encadeada
+
+              A função deve **retornar** o valor `True` se a lista contém um cíclo ou `False` caso contrário.
+
+              ## Input
+
+              A entrada é composta de apenas uma linha, que contêm números que compoẽm a lista encadeada, caso haja um ciclo na lista, o elemento que inicia o cíclo é precedido de um `#`.
+              Para o diagrama acima, a entrada é `1 # 2 3`.
+              Haverá sempre ao menos um elemento na lista.
+
+              Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
+
+              ## Code
+
+              ```python
+              # implement the function below
+              def has_cycle(head):
+                  pass
+                      
+              class ListNode:
+                  def __init__(self, v):
+                      self.v = v
+                      self.next = None
+                  
+                  
+              if __name__ == '__main__':
+                  while True:
+                      head, tail, put_cycle, cycle = None, None, False, None
+                      for v in input().split():
+                          if v == '#':
+                              put_cycle = True
+                              continue
+                          v = int(v)
+                          if not head: head = tail = ListNode(v)
+                          else:
+                              tail.next = ListNode(v  )
+                              tail = tail.next
+                          if put_cycle and cycle is None:
+                              cycle = tail
+                      if cycle is not None:
+                          tail.next = cycle
+                      put_cycle, cycle, tail = False, None, None
+                      print(has_cycle(head))
+                      try:
+                          input()
+                      except EOFError:
+                          break
+              ```
+                      
+              ## Examples
+                      
+              Input:
+
+              ```
+              0 0 # 0 0 0 0
+
+              0 1 2 3 # 4 5
+
+              # 0 1 2 3 4 5
+
+              0 1 2 3 4 5
+              ```
+
+              Output:
+
+              ```
+              True
+              True
+              True
+              False
+              ```
+          - answer:
+              id: q2
+              required: true
+              type:
+                long:
+                  placeholder: Ao terminar, cole todo o código aqui
+  #
+  #
+  - timer: 600
+    questions:
+      - content:
+          - text: |
+              # Lowest Common Ancestor
+
+              Em uma árvore binária, o primeiro ancestral comum de dois nós `va` e `vb` é o parente em comum destes nós que é está mais longe da raiz da árvore.
+              Se `va` é parente ou ancestral de `vb` ou vice-versa, então o nó parente também é o ancestral comum.
+
+              Você deve completar a função `lca(root, va, vb)` que recebe três argumentos:
+
+              -   `root`: o nó raiz de uma árvore binária
+              -   `va` e `vb`: valores de nós na árvore, tal que `va <= vb`, dos quais se quer obter o ancestral comum
+
+              A função deve **retornar** o valor do primeiro ancestral comum de `va` e `vb`.
+
+              ## Input
+
+              A primeira linha da entrada é uma lista de números que seram inseridos um a um em uma BST.
+              A segunda linha contem os valores `va` e `vb`.
+              `va` e `vb` estão sempre contidos na BST.
+
+              Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
+
+              ## Code
+
+              ```python
+              # implement the function below
+              def lca(root, va, vb):
+                  pass
+                  
+                  
+              class BSTNode:
+                  def __init__(self, v):
+                      self.v = v
+                      self.left = None
+                      self.right = None
+                  
+                  
+              if __name__ == '__main__':
+                  while True:
+                      root = None
+                      for v in (int(v) for v in input().split()):
+                          parent, node = None, root
+                          while node is not None and v != node.v: node, parent = (node.left if v < node.v else node.right), node
+                          if node is not None: continue
+                          if parent is None: root = BSTNode(v)
+                          elif v < parent.v: parent.left = BSTNode(v)
+                          else: parent.right = BSTNode(v)
+                      va, vb = [int(v) for v in input().split()]
+                      print(lca(root, va, vb))
+                      try:
+                          input()
+                      except EOFError:
+                          break
+              ```
+                      
+              ## Examples
+                      
+              Input:
+
+              ```
+              7 0 8 5 9
+              5 9
+
+              6 3 1 5 4 9 7
+              1 4
+              ```
+
+              Output:
+
+              ```
+              7
+              3
+              ```
+          - answer:
+              id: q3
+              required: true
+              type:
+                long:
+                  placeholder: Ao terminar, cole todo o código aqui
+  #
+  #
+  - timer: 600
+    questions:
+      - content:
+          - text: |
+              # Jessie Cookies
+
+              Jessie adora biscoitos.
+              Ele quer que a doçura de seus biscoitos seja maior que um valor `k`.
+              Para conseguir isso, Jessie repetidamente mistura seus dois biscoitos menos doces `c0` e `c1`, e cria um biscoito combinado `c`.
+
+              Dado que o biscoito `c0` é menos ou igualmente doce a `c1`, o novo biscoito terá doçura `c = c0 + 2 * c1`.
+
+              Ele repete esse procedimento até que todos os biscoitos restantes tenham doçura maior ou igual a `k`.
+
+              Você deve completar a função `combinations(cookies, k)` que recebe dois argumentos:
+
+              -   `cookies`: uma lista contendo as doçuras dos biscoitos
+              -   `k`: a doçura mínima esperada
+
+              A função deve **retornar** quantas misturas de biscoitos são nescessárias para que todos os biscoitos tenham ao menos a doçura `k`.
+              Se a doçura não pode ser atingida, a função deve **retornar** `-1`.
+
+              ## Input
+
+              A primeira linha da entrada contém uma lista de números que representam a doçura de cada biscoito.
+              A segunda linha contem `k`.
+
+              Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
+
+              ## Code
+
+              ```python
+              # implement the function below
+              def combinations(cookies, k):
+                  pass
+                  
+                  
+              if __name__ == '__main__':
+                  while True:
+                      cookies = [int(i) for i in input().split()]
+                      k = int(input())
+                      print(combinations(cookies, k))
+                      try:
+                          input()
+                      except EOFError:
+                          pass
+              ```
+                      
+              ```java
+                      
+              ```
+                      
+              ## Examples
+                      
+              Input:
+
+              ```
+              7 1 9 8 5 9
+              50
+
+              7 2 5 1 3 2 6 7
+              70
+
+              2 2 5 3 1 1
+              45
+              ```
+
+              Output:
+
+              ```
+              5
+              7
+              -1
+              ```
+          - answer:
+              id: q4
+              required: true
+              type:
+                long:
+                  placeholder: Ao terminar, cole todo o código aqui
+  #
+  #
+  - timer: 0
+    questions:
+      - content:
+          - text: |
+              ### Para finalizar, responda o que achou de Willow
+
+      - content:
+          - text: |
+              #### Você acha que Willow ajudou a entender o comportamento do seu código e resolver os problemas?
+          - answer:
+              id: r1
+              required: true
+              type:
+                likert:
+                  first: Discordo totalmente
+                  last: Concordo totalmente
+                  size: 5
+
+      - content:
+          - text: |
+              #### Você usaria Willow novamente para estudar ou depurar algum algoritmo?
+          - answer:
+              id: r2
+              required: true
+              type:
+                likert:
+                  first: Não usaria novamente
+                  last: Usaria novamente
+                  size: 5
+
+      - content:
+          - text: |
+              #### Descreva o que você achou de Willow, problemas que encontrou ao usar, recomendações e idéias de funcionalidades que você acha que seriam interessantes.
+          - answer:
+              id: r3
+              required: true
+              type:
+                long:
+                  placeholder: Escreva aqui
