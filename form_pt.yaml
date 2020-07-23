@@ -11,6 +11,19 @@ submission:
   url: https://us-central1-json-form-63252.cloudfunctions.net/submitAnswers
   uniqueAnswer: email
 
+transform: |
+  function formTransform(text) {
+      return text
+          .split(/<!--english-->(.|\n)*?<!--english-->/) // remove english texts
+          .join('')
+          .split(/```java(.|\n)*?```/) // remove java code
+          .join('')
+          .split(/<!--solution-->(.|\n)*?<!--solution-->/) // remove solutions
+          .join('')
+          .split(/<!--.*?-->/) // remove remaining tags
+          .join('')
+  }
+
 groups:
   url: https://us-central1-json-form-63252.cloudfunctions.net/getGroupsFrequencies
   names:
