@@ -193,7 +193,7 @@ sessions:
       - content:
           - markdownText: |
               #### Descreva o que você achou de Willow, problemas que encontrou ao usar, recomendações e idéias de funcionalidades que você acha que seriam interessantes.
-          - answer:
+          - input:
               id: r3
               required: true
               type:
