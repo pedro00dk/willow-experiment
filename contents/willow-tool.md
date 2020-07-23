@@ -8,7 +8,7 @@ Você deve usar o ambiente Willow para resolver esses problemas.
 Antes de avançar para os problemas, você deve acessar Willow e seguir os passos abaixo.
 Os passos proverão um treinamento básico de como usar Willow.
 
-Primeiro clique link abaixo para acessar o site do Willow.
+Primeiro clique no link abaixo para acessar o site do Willow.
 
 https://willow-beta.web.app/
 
