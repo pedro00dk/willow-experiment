@@ -53,20 +53,16 @@ A função deve **retornar** o valor `True` se a lista contém um cíclo ou `Fal
 <!--english-->
 
 The input is composed of only one line, which contains numbers that compose the linked list, if there is a cycle in the list, the element that starts the cycle is preceded by a `#`.
-For the diagram above, the input is `1 # 2 3`.
+For the diagram above, the input is `1 #2 3`.
 There will be always at least one element in the list.
-
-Multiple inputs can be provided at once, ther must be an empty line between each input line.
 
 <!--english-->
 
 <!--portuguese-->
 
 A entrada é composta de apenas uma linha, que contêm números que compoẽm a lista encadeada, caso haja um ciclo na lista, o elemento que inicia o cíclo é precedido de um `#`.
-Para o diagrama acima, a entrada é `1 # 2 3`.
+Para o diagrama acima, a entrada é `1 #2 3`.
 Haverá sempre ao menos um elemento na lista.
-
-Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
 
 <!--portuguese-->
 
@@ -75,14 +71,16 @@ Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em
 ```python
 # implement the function below
 def has_cycle(head):
-    # solution
+    # <!--solution-->
     slow, fast = head, head
     while fast is not None and fast.next is not None:
         slow, fast = slow.next, fast.next.next
         if slow == fast:
             return True
     return False
-    #
+    # <!--solution-->
+    return False
+
 
 class ListNode:
     def __init__(self, v):
@@ -91,27 +89,16 @@ class ListNode:
 
 
 if __name__ == '__main__':
-    while True:
-        head, tail, put_cycle, cycle = None, None, False, None
-        for v in input().split():
-            if v == '#':
-                put_cycle = True
-                continue
-            v = int(v)
-            if not head: head = tail = ListNode(v)
-            else:
-                tail.next = ListNode(v  )
-                tail = tail.next
-            if put_cycle and cycle is None:
-                cycle = tail
-        if cycle is not None:
-            tail.next = cycle
-        put_cycle, cycle, tail = False, None, None
-        print(has_cycle(head))
-        try:
-            input()
-        except EOFError:
-            break
+    head, tail, cycle = None, None, None
+    for v in input().split():
+        if not head: head = tail = ListNode(v)
+        else:
+            tail.next = ListNode(v  )
+            tail = tail.next
+        if v[0] == '#': cycle = tail
+    tail.next = cycle
+    tail = cycle = None
+    print(has_cycle(head))
 ```
 
 ```java
@@ -124,7 +111,7 @@ public class Main {
 
     // implement the function below
     static boolean hasCycle(ListNode head) {
-        // solution
+        // <!--solution-->
         var slow = head;
         var fast = head;
         while (fast != null && fast.next != null) {
@@ -133,13 +120,14 @@ public class Main {
             if (slow == fast) return true;
         }
         return false;
-        //
+        // <!--solution-->
+        return false;
     }
 
     static class ListNode {
-        int v;
+        String v;
         ListNode next;
-        ListNode(int v) {
+        ListNode(String v) {
             this.v = v;
             next = null;
         }
@@ -147,26 +135,18 @@ public class Main {
 
     public static void main (String[] args) throws IOException {
         var reader = new BufferedReader(new InputStreamReader(System.in));
-        while(true) {
-            ListNode head = null, tail = null, cycle = null;
-            var putCycle = false;
-            for (var v : reader.readLine().split(" ")) {
-                if (v.equals("#")) {
-                    putCycle = true;
-                    continue;
-                }
-                var vint = Integer.parseInt(v);
-                if (head == null) head = tail = new ListNode(vint);
-                else {
-                    tail.next = new ListNode(vint);
-                    tail = tail.next;
-                }
-                if (putCycle && cycle == null) cycle = tail;
+        ListNode head = null, tail = null, cycle = null;
+        for (var v : reader.readLine().split(" ")) {
+            if (head == null) head = tail = new ListNode(v);
+            else {
+                tail.next = new ListNode(v);
+                tail = tail.next;
             }
-            if (cycle != null) tail.next = cycle;
-            System.out.println(hasCycle(head));
-            if (reader.readLine() == null) break;
+            if (v.charAt(0) == '#') cycle = tail;
         }
+        tail.next = cycle;
+        tail = cycle = null;
+        System.out.println(hasCycle(head));
     }
 }
 ```
@@ -189,7 +169,10 @@ Output:
 
 ```
 True
+
 True
+
 True
+
 False
 ```

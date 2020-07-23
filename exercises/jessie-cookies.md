@@ -47,16 +47,12 @@ Se a doçura não pode ser atingida, a função deve **retornar** `-1`.
 The first input line contains a list of numbers when represent the sweetness of each cookie.
 The second line contains `k`.
 
-Multiple inputs can be provided at once, ther must be an empty line between each input line.
-
 <!--english-->
 
 <!--portuguese-->
 
 A primeira linha da entrada contém uma lista de números que representam a doçura de cada biscoito.
 A segunda linha contem `k`.
-
-Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
 
 <!--portuguese-->
 
@@ -65,7 +61,7 @@ Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em
 ```python
 # implement the function below
 def combinations(cookies, k):
-    # solução
+    # <!--solution-->
     def heapify(i):
         l, r = i * 2 + 1, i * 2 + 2
         smaller = i
@@ -90,22 +86,73 @@ def combinations(cookies, k):
         merges += 1
 
     return merges if cookies[0] >= k else -1
-    #
+    # <!--solution-->
+    return -1
 
 
 if __name__ == '__main__':
-    while True:
-        cookies = [int(i) for i in input().split()]
-        k = int(input())
-        print(combinations(cookies, k))
-        try:
-            input()
-        except EOFError:
-            pass
+    cookies = [int(i) for i in input().split()]
+    k = int(input())
+    print(combinations(cookies, k))
 ```
 
 ```java
+import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
+public class Main {
+
+    // implement the function below
+    static int combinations(int[] cookies, int k) {
+        // <!--solution-->
+        for (var i = cookies.length / 2 - 1; i >= 0; i--)
+            heapify(cookies, i, cookies.length);
+        var merges = 0;
+        var length = cookies.length;
+        while (length >= 2 && cookies[0] < k) {
+            var cookieA = cookies[0];
+            cookies[0] = cookies[length - 1];
+            length -= 1;
+            heapify(cookies, 0, length);
+            var cookieB = cookies[0];
+            var newCookie = cookieA + cookieB * 2;
+            cookies[0] = newCookie;
+            heapify(cookies, 0, length);
+            merges += 1;
+        }
+        return merges;
+        // <!--solution-->
+        return -1;
+    }
+
+    // <!--solution-->
+    static void heapify(int[] cookies, int i, int length) {
+        var l = i * 2 + 1;
+        var r = i * 2 + 2;
+        var smaller = i;
+        smaller = l < length && cookies[l] < cookies[smaller] ? l : smaller;
+        smaller = r < length && cookies[r] < cookies[smaller] ? r : smaller;
+        if (smaller != i) {
+            var aux = cookies[i];
+            cookies[i] = cookies[smaller];
+            cookies[smaller] = aux;
+            heapify(cookies, smaller, length);
+        }
+    }
+    // <!--solution-->
+
+    public static void main (String[] args) throws IOException {
+        var reader = new BufferedReader(new InputStreamReader(System.in));
+        var stringCookies = reader.readLine().split(" ");
+        var cookies = new int[stringCookies.length];
+        for (var i = 0; i < stringCookies.length; i++) cookies[i] = Integer.parseInt(stringCookies[i]);
+        stringCookies = null;
+        var k = Integer.parseInt(reader.readLine());
+        System.out.println(combinations(cookies, k));
+    }
+}
 ```
 
 ## Examples

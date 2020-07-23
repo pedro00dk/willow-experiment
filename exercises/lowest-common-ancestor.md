@@ -36,8 +36,6 @@ The first line is a list of numbers to be inserted one at a time in a BST.
 The seconds line contains the values `va` and `vb`.
 `va` and `vb` are always contained in the BST.
 
-Multiple inputs can be provided at once, ther must be an empty line between each input line.
-
 <!--english-->
 
 <!--portuguese-->
@@ -46,8 +44,6 @@ A primeira linha da entrada é uma lista de números que seram inseridos um a um
 A segunda linha contem os valores `va` e `vb`.
 `va` e `vb` estão sempre contidos na BST.
 
-Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em branco entre cada entrada.
-
 <!--portuguese-->
 
 ## Code
@@ -55,12 +51,13 @@ Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em
 ```python
 # implement the function below
 def lca(root, va, vb):
-    # solution
+    # <!--solution-->
     pointer = root
     while not va <= pointer.v <= vb:
         pointer = pointer.left if pointer.v > vb else pointer.right
     return pointer.v
-    #
+    # <!--solution-->
+    return 0
 
 
 class BSTNode:
@@ -71,21 +68,16 @@ class BSTNode:
 
 
 if __name__ == '__main__':
-    while True:
-        root = None
-        for v in (int(v) for v in input().split()):
-            parent, node = None, root
-            while node is not None and v != node.v: node, parent = (node.left if v < node.v else node.right), node
-            if node is not None: continue
-            if parent is None: root = BSTNode(v)
-            elif v < parent.v: parent.left = BSTNode(v)
-            else: parent.right = BSTNode(v)
-        va, vb = [int(v) for v in input().split()]
-        print(lca(root, va, vb))
-        try:
-            input()
-        except EOFError:
-            break
+    root = None
+    for v in (int(v) for v in input().split()):
+        parent, node = None, root
+        while node is not None and v != node.v: node, parent = (node.left if v < node.v else node.right), node
+        if node is not None: continue
+        if parent is None: root = BSTNode(v)
+        elif v < parent.v: parent.left = BSTNode(v)
+        else: parent.right = BSTNode(v)
+    va, vb = [int(v) for v in input().split()]
+    print(lca(root, va, vb))
 ```
 
 ```java
@@ -98,12 +90,13 @@ public class Main {
 
     // implement the function below
     static int lca(BSTNode root, int va, int vb) {
-        // solution
+        // <!--solution-->
         var pointer = root;
         while (pointer.v < va || pointer.v > vb)
             pointer = pointer.v > vb ? pointer.left : pointer.right;
         return pointer.v;
-        //
+        // <!--solution-->
+        return 0;
     }
 
     static class BSTNode {

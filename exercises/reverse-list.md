@@ -62,7 +62,7 @@ def reverse(head):
         pointer = next_pointer
     return reversed
     # <!--solution-->
-    pass
+    return head
 
 class ListNode:
     def __init__(self, v):
@@ -71,21 +71,16 @@ class ListNode:
 
 
 if __name__ == '__main__':
-    while True:
-        head, tail = None, None
-        for v in (int(v) for v in input().split()):
-            if not head: head = tail = ListNode(v)
-            else:
-                tail.next = ListNode(v)
-                tail = tail.next
-        head = reverse(head)
-        while head is not None:
-            print(head.v, end=' ' if head.next is not None else '\n')
-            head = head.next
-        try:
-            input()
-        except EOFError:
-            break
+    head, tail = None, None
+    for v in (int(v) for v in input().split()):
+        if not head: head = tail = ListNode(v)
+        else:
+            tail.next = ListNode(v)
+            tail = tail.next
+    head = reverse(head)
+    while head is not None:
+        print(head.v, end=' ' if head.next is not None else '\n')
+        head = head.next
 ```
 
 ```java
@@ -109,6 +104,7 @@ public class Main {
         }
         return reversed;
         // <!--solution-->
+        return head;
     }
 
     static class ListNode {
@@ -122,23 +118,19 @@ public class Main {
 
     public static void main (String[] args) throws IOException {
         var reader = new BufferedReader(new InputStreamReader(System.in));
-        while(true) {
-            ListNode head = null, tail = null;
-            for (var v : reader.readLine().split(" ")) {
-                var vint = Integer.parseInt(v);
-                if (head == null) head = tail = new ListNode(vint);
-                else {
-                    tail.next = new ListNode(vint);
-                    tail = tail.next;
-                }
+        ListNode head = null, tail = null;
+        for (var v : reader.readLine().split(" ")) {
+            var vint = Integer.parseInt(v);
+            if (head == null) head = tail = new ListNode(vint);
+            else {
+                tail.next = new ListNode(vint);
+                tail = tail.next;
             }
-            head = reverse(head);
-            while (head != null) {
-                System.out.print(head.v + " ");
-                head = head.next;
-            }
-            System.out.println();
-            if (reader.readLine() == null) break;
+        }
+        head = reverse(head);
+        while (head != null) {
+            System.out.print(head.v + " ");
+            head = head.next;
         }
     }
 }
