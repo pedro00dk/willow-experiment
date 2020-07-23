@@ -53,7 +53,7 @@ Múltiplas entradas podem ser aceitas de uma única vez, deve haver uma linha em
 ```python
 # implement the function below
 def reverse(head):
-    # solution
+    # <!--solution-->
     pointer, reversed = head, None
     while pointer is not None:
         next_pointer = pointer.next
@@ -61,7 +61,8 @@ def reverse(head):
         reversed = pointer
         pointer = next_pointer
     return reversed
-    #
+    # <!--solution-->
+    pass
 
 class ListNode:
     def __init__(self, v):
@@ -97,7 +98,7 @@ public class Main {
 
     // implement the function below
     static ListNode reverse(ListNode head) {
-        // solution
+        // <!--solution-->
         var pointer = head;
         ListNode reversed = null;
         while (pointer != null) {
@@ -107,7 +108,7 @@ public class Main {
             pointer = nextPointer;
         }
         return reversed;
-        //
+        // <!--solution-->
     }
 
     static class ListNode {
