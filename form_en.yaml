@@ -14,7 +14,7 @@ submission:
 transform: |
   function formTransform(text) {
       return text
-          .split(/<!--english-->(.|\n)*?<!--english-->/) // remove english texts
+          .split(/<!--portuguese-->(.|\n)*?<!--portuguese-->/) // remove portuguese texts
           .join('')
           .split(/```java(.|\n)*?```/) // remove java code
           .join('')
@@ -58,54 +58,54 @@ sessions:
           - markdownResource: introduction
 
           - markdownText: |
-              ##### Preencha o formulário abaixo.
+              ##### Fill the form below.
           - input:
               id: name
               required: true
               type:
                 short:
-                  placeholder: Seu nome
+                  placeholder: Your name
           - input:
               id: email
               required: true
               type:
                 short:
-                  placeholder: Seu endereço de email
+                  placeholder: Your email address
 
           - markdownText: |
-              ###### Selecione sua formação.
+              ###### Your degree.
           - input:
               id: formation
               required: true
               type:
                 multi:
                   options:
-                    - granduando
-                    - pós-graduando
+                    - undergraduate student
+                    - post-graduate student
                     - professor
-                    - desenvolvedor formado
-                    - desenvolvedor não formado
+                    - graduated developer
+                    - non-graduated developer
 
           - markdownText: |
-              ###### Caso seja graduando, pós-graduando ou professor, preencha as informações abaixo.
+              ###### If you are an undergraduate, post-graduate student or professor, fill the fields below.
           - input:
               id: university
               required: false
               type:
                 short:
-                  placeholder: Nome de sua institição de ensino
+                  placeholder: Your institution
           - input:
               id: course
               required: false
               type:
                 short:
-                  placeholder: Nome do seu curso
+                  placeholder: Your course name
           - input:
               id: period
               required: false
               type:
                 short:
-                  placeholder: Periodo que está cursando (apenas graduandos)
+                  placeholder: Your current semester (only undergraduates)
   #
   #
   - questions:
@@ -121,10 +121,10 @@ sessions:
   - questions:
       - content:
           - markdownText: |
-              # Intervalo
+              # Interval
 
-              Caso precise parar o experimento, este é um bom momento.
-              Ao proseguir, o próximo problema será apresentado.
+              If you need to stop the experiment, this is a good moment.
+              By proceding, the next problem will be presented.
   #
   #
   - timer: 600
@@ -136,7 +136,7 @@ sessions:
               required: true
               type:
                 long:
-                  placeholder: Ao terminar, cole todo o código aqui
+                  placeholder: When you're done, paste all the code here
   #
   #
   - timer: 600
@@ -148,7 +148,7 @@ sessions:
               required: true
               type:
                 long:
-                  placeholder: Ao terminar, cole todo o código aqui
+                  placeholder: When you're done, paste all the code here
   #
   #
   - timer: 600
@@ -160,7 +160,7 @@ sessions:
               required: true
               type:
                 long:
-                  placeholder: Ao terminar, cole todo o código aqui
+                  placeholder: When you're done, paste all the code here
   #
   #
   - timer: 600
@@ -172,68 +172,68 @@ sessions:
               required: true
               type:
                 long:
-                  placeholder: Ao terminar, cole todo o código aqui
+                  placeholder: When you're done, paste all the code here
   #
   #
   - questions:
       - content:
           - markdownText: |
-              ### Para finalizar, responda o que achou de Willow
+              ### Finally, answer what you think of Willow
 
       - content:
           - markdownText: |
-              #### Quanta confiança você tem na corretude respostas dos problemas que você resolveu sem usar Willow.
+              #### How much confidence do you have in the correctness of the answers to the problems you solved without using Willow.
           - input:
               id: cNoTool
               required: true
               type:
                 likert:
-                  first: pouca confiança
-                  last: muita confiança
+                  first: little confidence
+                  last: high confidence
                   size: 5
 
       - content:
           - markdownText: |
-              #### Quanta confiança você tem na corretude respostas dos problemas que você resolveu usando Willow.
+              #### How much confidence do you have in the correctness of the answers to the problems you solved using Willow.
           - input:
               id: cTool
               required: true
               type:
                 likert:
-                  first: pouca confiança
-                  last: muita confiança
+                  first: little confidence
+                  last: high confidence
                   size: 5
 
       - content:
           - markdownText: |
-              #### Você acha que Willow ajudou a entender o comportamento do seu código e resolver os problemas?
+              #### Do you think Willow helped you understand the behavior of your code and solve the problems?
           - input:
               id: r1
               required: true
               type:
                 likert:
-                  first: Discordo totalmente
-                  last: Concordo totalmente
+                  first: Totally disagree
+                  last: Totally agree
                   size: 5
 
       - content:
           - markdownText: |
-              #### Você usaria Willow novamente para estudar ou depurar algum algoritmo?
+              #### Would you use Willow again to study or debug an algorithm?
           - input:
               id: r2
               required: true
               type:
                 likert:
-                  first: Não usaria novamente
-                  last: Usaria novamente
+                  first: I would not use it again
+                  last: I would use it again
                   size: 5
 
       - content:
           - markdownText: |
-              #### Descreva o que você achou de Willow, problemas que encontrou ao usar, recomendações e idéias de funcionalidades que você acha que seriam interessantes.
+              #### Describe what you thought of Willow, problems you encountered when using it, recommendations and ideas for features that you think would be interesting.
           - input:
               id: r3
               required: true
               type:
                 long:
-                  placeholder: Escreva o que achou aqui
+                  placeholder: Write what you thought here
