@@ -29,29 +29,38 @@ groups:
   names:
     group1:
       - 0
+      - 9
       - 1
-      - 4
-      - 3
       - 5
+      - 11
       - 2
       - 6
+      - 10
       - 3
       - 7
+      - 11
+      - 4
       - 8
+      - 12
     group2:
       - 0
-      - 1
-      - 6
+      - 9
       - 3
       - 7
-      - 2
+      - 11
       - 4
-      - 3
-      - 5
       - 8
+      - 10
+      - 1
+      - 5
+      - 11
+      - 2
+      - 6
+      - 12
 
 sessions:
   #
+  # 0: introduction
   #
   - questions:
       - content:
@@ -107,25 +116,7 @@ sessions:
                 short:
                   placeholder: Your current semester (only undergraduates)
   #
-  #
-  - questions:
-      - content:
-          - markdownResource: noTool
-  #
-  #
-  - questions:
-      - content:
-          - markdownResource: willowTool
-  #
-  #
-  - questions:
-      - content:
-          - markdownText: |
-              # Interval
-
-              If you need to stop the experiment, this is a good moment.
-              By proceding, the next problem will be presented.
-  #
+  # 1: q1
   #
   - timer: 600
     questions:
@@ -138,6 +129,7 @@ sessions:
                 long:
                   placeholder: When you're done, paste all the code here
   #
+  # 2: q2
   #
   - timer: 600
     questions:
@@ -150,6 +142,7 @@ sessions:
                 long:
                   placeholder: When you're done, paste all the code here
   #
+  # 3: q3
   #
   - timer: 600
     questions:
@@ -162,6 +155,7 @@ sessions:
                 long:
                   placeholder: When you're done, paste all the code here
   #
+  # 4: q4
   #
   - timer: 600
     questions:
@@ -174,35 +168,86 @@ sessions:
                 long:
                   placeholder: When you're done, paste all the code here
   #
+  # 5: q1 confidence
+  # 
+  - questions:
+      - content:
+          - markdownText: |
+              How confident are you about the correctness of the previous answer?
+          - input:
+              id: q1confidence
+              required: true
+              type:
+                long:
+                  placeholder: Write here
+  #
+  # 6: q2 confidence
+  #
+  - questions:
+      - content:
+          - markdownText: |
+              How confident are you about the correctness of the previous answer?
+          - input:
+              id: q2confidence
+              required: true
+              type:
+                long:
+                  placeholder: Write here
+  #
+  # 7: q3 confidence
+  #
+  - questions:
+      - content:
+          - markdownText: |
+              How confident are you about the correctness of the previous answer?
+          - input:
+              id: q3confidence
+              required: true
+              type:
+                long:
+                  placeholder: Write here
+  #
+  # 8: q4 confidence
+  #
+  - questions:
+      - content:
+          - markdownText: |
+              How confident are you about the correctness of the previous answer?
+          - input:
+              id: q4confidence
+              required: true
+              type:
+                long:
+                  placeholder: Write here
+  #
+  # 9: no tool intro
+  #
+  - questions:
+      - content:
+          - markdownResource: noTool
+  #
+  # 10: willow intro
+  #
+  - questions:
+      - content:
+          - markdownResource: willowTool
+  #
+  # 11: interval
+  #
+  - questions:
+      - content:
+          - markdownText: |
+              # Interval
+
+              If you need to stop the experiment, this is a good moment.
+              By proceding, the next problem will be presented.
+  #
+  # 12: conclusion
   #
   - questions:
       - content:
           - markdownText: |
               ### Finally, answer what you think of Willow
-
-      - content:
-          - markdownText: |
-              #### How much confidence do you have in the correctness of the answers to the problems you solved without using Willow.
-          - input:
-              id: cNoTool
-              required: true
-              type:
-                likert:
-                  first: little confidence
-                  last: high confidence
-                  size: 5
-
-      - content:
-          - markdownText: |
-              #### How much confidence do you have in the correctness of the answers to the problems you solved using Willow.
-          - input:
-              id: cTool
-              required: true
-              type:
-                likert:
-                  first: little confidence
-                  last: high confidence
-                  size: 5
 
       - content:
           - markdownText: |
@@ -215,12 +260,22 @@ sessions:
                   first: Totally disagree
                   last: Totally agree
                   size: 5
+      
+      - content:
+          - markdownText: |
+              #### What fetures of Willow do you find more interesting? And why?
+          - input:
+              id: r2
+              required: true
+              type:
+                long:
+                  placeholder: Write here
 
       - content:
           - markdownText: |
               #### Would you use Willow again to study or debug an algorithm?
           - input:
-              id: r2
+              id: r3
               required: true
               type:
                 likert:
@@ -230,9 +285,9 @@ sessions:
 
       - content:
           - markdownText: |
-              #### Describe what you thought of Willow, problems you encountered when using it, recommendations and ideas for features that you think would be interesting.
+              #### Describe problems you encountered when using willow, recommendations and ideas for features that you think would be interesting.
           - input:
-              id: r3
+              id: r4
               required: true
               type:
                 long:

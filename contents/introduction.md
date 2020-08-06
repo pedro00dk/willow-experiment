@@ -6,6 +6,7 @@
 
 -   Pedro Henrique Sousa de Moraes - phsm@cin.ufpe.br
 -   Leopoldo Motta Teixeira - lmt@cin.ufpe.br
+-   Marcelo d'Amorin - damorin@cin.ufpe.br
 
 #### Study Objective
 
@@ -42,8 +43,8 @@ In total, the problems to be solved in this questionnaire have an expected time 
 
 #### Notes
 
-Willow is a tool curently in development, so you must use google chrome or a browser based on chromium (Opera, Brave, Vivaldi, etc.).
-You must have a google account to log into the tool, the login will let you to run longer programs and allow the tool to collect basic user interaction data
+Willow is a tool curently in development, so **you must use google chrome** or a browser based on chromium (Opera, Brave, Vivaldi, etc.).
+**You also must have a google account to log into the tool**, the login will let you to run longer programs and allow the tool to collect basic user interaction data.
 
 <!--english-->
 

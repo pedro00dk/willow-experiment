@@ -179,8 +179,8 @@ Tente agora arrastar os objetos na heap.
 
 <!--english-->
 
-You can also activate automatic layout, just double-click on any internal object in the list (in the list).
-It also works with another linked data structures, such as binary trees.
+You can also activate automatic layout, just double-click on any internal object in the list.
+It also works with other linked data structures, such as binary trees.
 
 <!--english-->
 
