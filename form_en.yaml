@@ -123,7 +123,7 @@ sessions:
       - content:
           - markdownResource: cycleDetection
           - input:
-              id: q1cycle
+              id: q1
               required: true
               type:
                 long:
@@ -136,7 +136,7 @@ sessions:
       - content:
           - markdownResource: jessieCookies
           - input:
-              id: q2cookies
+              id: q2
               required: true
               type:
                 long:
@@ -149,7 +149,7 @@ sessions:
       - content:
           - markdownResource: lowestCommonAncestor
           - input:
-              id: q3ancestor
+              id: q3
               required: true
               type:
                 long:
@@ -162,7 +162,7 @@ sessions:
       - content:
           - markdownResource: reverseList
           - input:
-              id: q3reverse
+              id: q4
               required: true
               type:
                 long:
@@ -173,52 +173,60 @@ sessions:
   - questions:
       - content:
           - markdownText: |
-              How confident are you about the correctness of the previous answer?
+              How confident are you about the correctness of your previous solution?
           - input:
               id: q1confidence
               required: true
               type:
-                long:
-                  placeholder: Write here
+                likert:
+                  first: Not confident
+                  last: Very confident
+                  size: 5
   #
   # 6: q2 confidence
   #
   - questions:
       - content:
           - markdownText: |
-              How confident are you about the correctness of the previous answer?
+              How confident are you about the correctness of your previous solution?
           - input:
               id: q2confidence
               required: true
               type:
-                long:
-                  placeholder: Write here
+                likert:
+                  first: Not confident
+                  last: Very confident
+                  size: 5
   #
   # 7: q3 confidence
   #
   - questions:
       - content:
           - markdownText: |
-              How confident are you about the correctness of the previous answer?
+              How confident are you about the correctness of your previous solution?
           - input:
               id: q3confidence
               required: true
               type:
-                long:
-                  placeholder: Write here
+                likert:
+                  first: Not confident
+                  last: Very confident
+                  size: 5
   #
   # 8: q4 confidence
   #
   - questions:
       - content:
           - markdownText: |
-              How confident are you about the correctness of the previous answer?
+              How confident are you about the correctness of your previous solution?
           - input:
               id: q4confidence
               required: true
               type:
-                long:
-                  placeholder: Write here
+                likert:
+                  first: Not confident
+                  last: Very confident
+                  size: 5
   #
   # 9: no tool intro
   #
