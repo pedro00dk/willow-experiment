@@ -10,7 +10,7 @@ You have to complete the function `reverse(head)` which takes one argument:
 
 -   `head`: the head node of a singly linked list
 
-The function must return **retornar** the new list head after the reverse operation.
+The function must **return** the new list head after the reverse operation.
 
 <!--english-->
 

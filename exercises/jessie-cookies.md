@@ -6,13 +6,13 @@ Jessie loves cookies.
 He wants the sweetness of his cookies to be greater then a value `k`.
 To archieve that, Jessie repeatedly mixes his two less sweet cookies `c0` and `c1`, and creates a new combined cookie `c`.
 
-Let the cookie `c0` less or as swwet as `c1`, the new cookie will have the sweeteness `c = c0 + 2 * c1`.
+Let the cookie `c0` be less or as sweet as another cookie `c1`, the new cookie will have the sweeteness `c = c0 + 2 * c1`.
 
 He repeats the proceduer until all of his remaining cookies have the sweetness greater than or equal `k`.
 
 You have to complete the function `combinations(cookies, k)`, which takes two arguments:
 
--   `cookies`: a list containing thw cookies sweetness
+-   `cookies`: a list containing cookies sweetness
 -   `k`: the minimum expected sweetness
 
 The function must **return** how many cookie mixes are necessary for all cookies to have at least `k` sweetness.
