@@ -30,8 +30,8 @@ All results presented in future scientific publications will be anonymized.
 #### Procedures
 
 This form has four problems about algorithms and data structures.
-The first two should be answered without using Willow, the remaining two with Willow
-Basic Willow training will be presented before solving the problems, for the introduction of basic tool concepts.
+The first two should be answered without using Willow, the remaining two with Willow.
+Basic Willow training/tutorial for the introduction of basic tool concepts will be presented before solving the problems.
 
 When starting to solve a problem, a timer will be displayed.
 It is not possible to stop it, but you can still submit your answer if you exceed the time limit.
@@ -39,7 +39,6 @@ After each problem, there is a transition section, where you can stop. During th
 
 #### Time
 
-In total, the problems to be solved in this questionnaire have an expected time of 40 to 60 minutes to be solved.
 In total, the expected that the time of the training tutorial and to solve ALL problems of the questionnaire about 40 to 60 minutes.
 
 #### Notes
