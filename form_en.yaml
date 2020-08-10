@@ -89,11 +89,11 @@ sessions:
               type:
                 multi:
                   options:
-                    - undergraduate student
-                    - post-graduate student
-                    - professor
-                    - graduated developer
-                    - non-graduated developer
+                    - Undergraduate student
+                    - Post-graduate student
+                    - Professor
+                    - Graduated developer
+                    - Non-graduated developer
 
           - markdownText: |
               ###### If you are an undergraduate, post-graduate student or professor, fill the fields below.
@@ -293,7 +293,7 @@ sessions:
 
       - content:
           - markdownText: |
-              #### Describe problems you encountered when using willow, recommendations and ideas for features that you think would be interesting.
+              #### Describe all problems you encountered when using willow, recommendations and ideas for features that you think would be interesting.
           - input:
               id: r4
               required: true

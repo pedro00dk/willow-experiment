@@ -18,7 +18,7 @@ Você deve usar o ambiente Willow para resolver esses problemas.
 
 <!--english-->
 
-You **must follow this tutorial slowly and paying close atention to the text** before advancing to the next problems.
+You **must follow this tutorial slowly and paying close attention to the text** before advancing to the next problems.
 The estimated time to finish this tutorial ranges from **6 to 10 minutes**.
 
 Before proceeding to the problems, you must access Willow and follow the steps below.
@@ -46,8 +46,8 @@ https://willow-beta.web.app/
 
 <!--english-->
 
-After accessing the site, you must login with a google account through the button in the right upper corner.
-The login will allow you to run longer programs.
+After accessing the site, you must log-in with a google account through the button in the right upper corner.
+The log-in will allow you to run longer programs.
 
 <!--english-->
 

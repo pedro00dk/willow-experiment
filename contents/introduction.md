@@ -1,12 +1,13 @@
 <!--english-->
 
-### An analysis of the impact of Willow in assisting Data Structures and Algorithms problem solving.
+### An analysis of Willow's impact in assisting the development of solutions to Data Structure and Algorithm problems
 
 #### Researchers
 
 -   Pedro Henrique Sousa de Moraes - phsm@cin.ufpe.br
 -   Leopoldo Motta Teixeira - lmt@cin.ufpe.br
 -   Marcelo d'Amorin - damorin@cin.ufpe.br
+-   Waldemar Neto - waldemar.neto@gmail.com
 
 #### Study Objective
 
@@ -15,10 +16,9 @@ Analyze the performance of the participants in solving Algorithms and Data Struc
 -   Assisted by the Willow tool
 -   Without the aid of visualization tools
 
-For the purpose of comparing situations.
-Regarding the time taken to solve problems and the quality of responses (correctness, asymptotic complexity).
+We compare the two situations regarding the time taken to solve problems and the quality of responses (correctness, asymptotic complexity).
 
-If you need further clarification on any item mentioned, or need information that has not been included, contact the researchers through their e-mail addresses.
+If you need further clarification about any mentioneditem, or need information that has not been included, contact the researchers through their e-mail addresses.
 
 #### Privacy
 
@@ -29,22 +29,23 @@ All results presented in future scientific publications will be anonymized.
 
 #### Procedures
 
-This form has four problems with algorithms and data structures.
+This form has four problems about algorithms and data structures.
 The first two should be answered without using Willow, the remaining two with Willow
 Basic Willow training will be presented before solving the problems, for the introduction of basic tool concepts.
 
 When starting to solve a problem, a timer will be displayed.
 It is not possible to stop it, but you can still submit your answer if you exceed the time limit.
-After each problem, there is a transition section, where you can stop, no time will be counted.
+After each problem, there is a transition section, where you can stop. During this period, time will NOT be counted.
 
 #### Time
 
 In total, the problems to be solved in this questionnaire have an expected time of 40 to 60 minutes to be solved.
+In total, the expected that the time of the training tutorial and to solve ALL problems of the questionnaire about 40 to 60 minutes.
 
 #### Notes
 
-Willow is a tool curently in development, so **you must use google chrome** or a browser based on chromium (Opera, Brave, Vivaldi, etc.).
-**You also must have a google account to log into the tool**, the login will let you to run longer programs and allow the tool to collect basic user interaction data.
+Willow is a tool currently in development, so **you must use Google Chrome**.
+**You also must have a Google Account to log into the tool**, the login will let you run longer programs and allow the tool to collect basic user interaction data.
 
 <!--english-->
 
