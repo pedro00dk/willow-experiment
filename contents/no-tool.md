@@ -12,7 +12,11 @@ You can also use websites that execute code online, such as https://repl.it/.
 In each problem, a base code that already reads inputs and prints the program's outputs will be provided.
 You should only implement a function presented in the problem.
 After solving the problem, you must **copy all the code** in the answer field.
-**You can still submit your response if the time limit is exceeded.**
+
+## Important
+
+**You CAN still submit your response if the time limit is exceeded.**
+**There is no problem if your answers are not be completely correct.**
 
 If you need to stop, there is a waiting session between the problems, it is NOT possible to stop the timer while solving a problem.
 
