@@ -1,6 +1,6 @@
 <!--english-->
 
-### No tools
+# No tools
 
 In the following sections, two problems will be presented.
 You can use the programing environment (text editor, IDE, etc) that you find most confortable.
@@ -14,13 +14,13 @@ You should only implement a function presented in the problem.
 After solving the problem, you must **copy all the code** in the answer field.
 **You can still submit your response if the time limit is exceeded.**
 
-If you need to stop, there is a waiting session between the problems, it is not possible to stop the timer during the solution of the problem.
+If you need to stop, there is a waiting session between the problems, it is not possible to stop the timer while solving a problem.
 
 <!--english-->
 
 <!--portuguese-->
 
-### Sem ferramentas
+# Sem ferramentas
 
 Nas proximas seções, dois problemas serão apresentados.
 Você pode usar o ambiente de programação (editor de texto, IDE, etc) que achar mais confortavel.

@@ -1,4 +1,4 @@
-### Willow
+# Willow
 
 <!--english-->
 
@@ -14,9 +14,12 @@ Você deve usar o ambiente Willow para resolver esses problemas.
 
 <!--portuguese-->
 
-#### Tutorial
+## Tutorial
 
 <!--english-->
+
+You **must follow this tutorial slowly and paying close atention to the text** before advancing to the next problems.
+The estimated time to finish this tutorial ranges from **6 to 10 minutes**.
 
 Before proceeding to the problems, you must access Willow and follow the steps below.
 The steps will provide basic training on how to use Willow.
@@ -27,6 +30,9 @@ First click on the link below to access the Willow website.
 <!--english-->
 
 <!--portuguese-->
+
+Você **deve seguir esse tutorial pausadamente e prestando bastante atenção ao texto** antes de avançar para os próximos problemas.
+O tempo extimado para completar esse tutorial varia de **6 a 10 minutos**
 
 Antes de avançar para os problemas, você deve acessar Willow e seguir os passos abaixo.
 Os passos proverão um treinamento básico de como usar Willow.
@@ -54,7 +60,7 @@ O login permitirá que você execute programas mais longos.
 
 ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step0-signin.png?raw=true)
 
-#### Step 1
+## Step 1
 
 <!--english-->
 
@@ -122,7 +128,7 @@ Cole também as entradas do programa em `Input`, que são os valores que serão 
 
 ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step1-screen.png?raw=true)
 
-#### Step 2
+## Step 2
 
 <!--english-->
 
@@ -141,27 +147,27 @@ Aguarde alguns segundos até que a visualização seja gerada.
 ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-play.png?raw=true)
 ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step2-screen.png?raw=true)
 
-#### Step 3
+## Step 3
 
 <!--english-->
 
-Use the right and left arrows to navigate to the end of the program.
-You can also click on the program scopes to jump to this point in the program.
+Use the **right and left arrows** to navigate to the end of the program.
+**You can also click on a call tree scope to jump to this point in the program.**
 Double-clicking jumps to the end of a scope instead of the beginning.
 
 <!--english-->
 
 <!--portuguese-->
 
-Use as setas para direita e esquerda para navegar até o fim do programa.
-Você também pode clicar nos escopos do programa para pular para este ponto do programa.
+Use as **setas para direita e esquerda** para navegar até o fim do programa.
+**Você também pode clicar nos escopos do programa para pular para este ponto do programa.**
 Clique duplo pula para o fim de um escopo ao invés do início.
 
 <!--portuguese-->
 
 ![](https://github.com/pedro00dk/willow-experiment/blob/master/images/step3-scopes.gif?raw=true)
 
-#### Step 4
+## Step 4
 
 <!--english-->
 
@@ -220,7 +226,7 @@ You should only implement a function presented in the problem.
 After solving the problem, you must **copy all the code** in the answer field.
 **You can still submit your response if the time limit is exceeded.**
 
-If you need to stop, there is a waiting session between the problems, it is not possible to stop the timer during the solution of the problem.
+If you need to stop, there is a waiting session between the problems, it is not possible to stop the timer while solving a problem.
 
 <!--english-->
 
